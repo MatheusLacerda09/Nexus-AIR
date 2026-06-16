@@ -8,6 +8,8 @@ Matheus De Castro
 Matheus Viana
 Byanca Santos
 Guilherme Lucas
-Stack utilizada no projeto, separando frontend, backend e banco de dados;
+Stack utilizada no front-end: HTML, CSS e Java Script.
+Stack utilizada nk back-end: PYTHON
+Banco de dados: MYSQL.
 Breve descrição do sistema;
 Instruções básicas para executar o projeto, quando aplicável.
