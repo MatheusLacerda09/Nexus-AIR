@@ -12,6 +12,8 @@ let notificacoes = [
   "Relatório REL-00450 Falhou em VM2 (08:45)"
 ];
 
+const API_ALERTAS_URL = 'http://localhost:5000/api/alertas/dashboard';
+
 const timersAtivos = {};
 
 function statusClassFor(status){
@@ -348,6 +350,38 @@ function iniciarAnimacaoRAM(){
   loop();
 }
 
+let alertasApiDisponivel = false;
+
+function formatarHorarioAlerta(horarioBruto){
+  if(!horarioBruto) return '';
+  const data = new Date(horarioBruto);
+  if(isNaN(data.getTime())) return String(horarioBruto);
+  return data.toLocaleString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
+}
+
+async function buscarAlertasReais(){
+  try{
+    const resposta = await fetch(API_ALERTAS_URL, { cache:'no-store' });
+    if(!resposta.ok) throw new Error('offline');
+    const corpo = await resposta.json();
+    const alertasApi = corpo.alertas || [];
+
+    alertasApiDisponivel = true;
+    notificacoes = alertasApi.map(a=>{
+      const hora = formatarHorarioAlerta(a.horario);
+      return `${a.tipo_alerta} em ${a.maquina_hostname} (${a.status_alerta}) ${hora}`;
+    });
+
+    renderAlertas();
+    renderNotificacoes(false);
+  }catch(erro){
+    if(!alertasApiDisponivel){
+      renderAlertas();
+      renderNotificacoes(false);
+    }
+  }
+}
+
 function initDateRange(){
   const dateRange = document.getElementById('dateRange');
   dateRange.addEventListener('click', ()=>{
@@ -441,4 +475,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
   buscarStatusCPU();
   setInterval(buscarStatusCPU, 4000);
   iniciarRelogioUptime();
+
+  buscarAlertasReais();
+  setInterval(buscarAlertasReais, 15000);
 });
