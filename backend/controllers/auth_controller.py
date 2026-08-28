@@ -7,11 +7,6 @@ auth_bp = Blueprint("auth", __name__, url_prefix="/api/auth")
 
 
 class AuthController:
-    """
-    Controller (classe) responsavel pela autenticacao: cadastro (signup),
-    login, logout e consulta do usuario logado. Usa sessao (cookie
-    assinado pelo Flask) para manter o usuario autenticado entre requisicoes.
-    """
 
     def __init__(self):
         self.service = UsuarioService()
