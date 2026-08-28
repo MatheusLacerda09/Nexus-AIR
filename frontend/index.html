@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus Air</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar" id="sidebar">
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="/assets/logo.png" alt="Nexus Air">
+        </div>
+      </div>
+    <nav>
+      <div class="nav-highlight" id="navHighlight"></div>
+      <button class="nav-item active" data-view="dashboard">
+        <span class="nav-icon">🔲</span><span class="nav-label">Dashboard</span>
+      </button>
+      <button class="nav-item" data-view="usuarios">
+        <span class="nav-icon">👥</span><span class="nav-label">Usuários</span>
+      </button>
+      <button class="nav-item" data-view="conectores">
+        <span class="nav-icon">🔗</span><span class="nav-label">Conectores de Dados</span>
+      </button>
+      <button class="nav-item" data-view="orquestrador">
+        <span class="nav-icon">🔄</span><span class="nav-label">Orquestrador de Fluxos</span>
+      </button>
+      <button class="nav-item" data-view="relatorios">
+        <span class="nav-icon">📊</span><span class="nav-label">Visualização de Relatórios</span>
+      </button>
+      <button class="nav-item" data-view="seguranca">
+        <span class="nav-icon">🛡️</span><span class="nav-label">Distribuição e Segurança</span>
+      </button>
+      <button class="nav-item" data-view="sistema">
+        <span class="nav-icon">🔧</span><span class="nav-label">Sistema e Governança</span>
+      </button>
+      <button class="nav-item" data-view="config">
+        <span class="nav-icon">⚙️</span><span class="nav-label">Configurações</span>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <button class="burger" id="burgerBtn" aria-label="Abrir/fechar menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="top-icons">
+        <button class="icon-btn" title="Buscar">🔍</button>
+        <button class="icon-btn" title="Ajuda">❓</button>
+
+        <div class="notif-wrapper">
+          <button class="icon-btn" id="notifBtn" title="Notificações">
+            🔔
+            <span class="notif-badge" id="notifBadge">0</span>
+          </button>
+          <div class="notif-dropdown" id="notifDropdown">
+            <div class="notif-dropdown-title">Notificações</div>
+            <div id="notifList"></div>
+          </div>
+        </div>
+
+        <div class="user-menu-wrapper">
+          <button class="user-chip" id="userChipBtn">👤 <span id="userChipNome">Usuário</span></button>
+          <div class="user-dropdown" id="userDropdown">
+            <div class="user-dropdown-nome" id="userDropdownNome">—</div>
+            <div class="user-dropdown-email" id="userDropdownEmail">—</div>
+            <button class="user-dropdown-logout" id="logoutBtn">🚪 Sair</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <section class="view active" id="view-dashboard">
+        <h2 class="section-title">Saúde da Máquina Virtual (Oracle Linux VM):</h2>
+
+        <div class="cards-row">
+          <div class="card card-anim" style="--delay:0">
+            <div class="card-title"><span class="bar"></span>CPU:</div>
+            <div class="card-body">
+              <canvas id="cpuChart" width="140" height="140"></canvas>
+              <div>
+                <div class="legend-mini"><strong id="cpuLivrePct">--%</strong>Não Utilizados</div>
+                <div class="legend-mini" style="margin-top:8px;"><strong id="cpuUsoPct">--%</strong>Utilização</div>
+                <div class="stat-line">⚡ Velocidade: <span id="cpuVelocidade">--</span></div>
+                <div class="stat-line">🕒 Tempo de Atividade: <span id="cpuUptime">--:--:--</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-anim" style="--delay:1">
+            <div class="card-title"><span class="bar"></span>RAM:</div>
+            <canvas id="ramChart" height="120"></canvas>
+          </div>
+
+          <div class="card card-anim" style="--delay:2">
+            <div class="card-title"><span class="bar"></span>Estatísticas de Tarefas:</div>
+            <div class="card-body">
+              <canvas id="tarefasChart" width="140" height="140"></canvas>
+              <div>
+                <div class="legend-mini"><strong>18%</strong>Falhas</div>
+                <div class="legend-mini" style="margin-top:8px;"><strong>82%</strong>Sucesso</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-title">Monitoramento de Processos &amp; Infraestrutura:</h2>
+
+        <div class="lower-row">
+          <div class="table-card card-anim" style="--delay:3">
+            <div class="table-header-row">
+              <div></div>
+              <button class="date-range" id="dateRange">📅 2026-01-01 &nbsp;~&nbsp; 2026-12-31</button>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID_Relatorio</th>
+                  <th>Tarefa</th>
+                  <th>Origem</th>
+                  <th>Tempo Estimado</th>
+                  <th>Status</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="alerts-card card-anim" style="--delay:4">
+            <div class="alerts-title">🔔 Central de Alertas:</div>
+            <div id="alertsList"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-usuarios">
+        <div class="table-header-row">
+          <h2 class="section-title" style="margin-bottom:0;">Gerenciamento de Usuários</h2>
+          <button class="btn-primary" id="novoUsuarioBtn">+ Novo Usuário</button>
+        </div>
+
+        <div class="table-card card-anim" style="--delay:0;margin-top:14px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Cargo</th>
+                <th>Departamento</th>
+                <th>Acesso</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody id="usuariosTableBody"></tbody>
+          </table>
+          <div id="usuariosVazio" class="table-empty" hidden>Nenhum usuário cadastrado ainda.</div>
+        </div>
+      </section>
+
+      <section class="view" id="view-conectores">
+        <div class="placeholder-view">
+          <div class="placeholder-icon">🔗</div>
+          <h2>Conectores de Dados</h2>
+          <p>Em breve você poderá gerenciar aqui as integrações com suas fontes de dados.</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-orquestrador">
+        <div class="placeholder-view">
+          <div class="placeholder-icon">🔄</div>
+          <h2>Orquestrador de Fluxos</h2>
+          <p>Em breve você poderá criar e acompanhar fluxos de automação aqui.</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-relatorios">
+        <div class="table-header-row">
+          <h2 class="section-title" style="margin-bottom:0;">Relatório de Resolução de Suporte</h2>
+          <div class="relatorio-filtro">
+            <input type="number" id="relatorioIdSuporte" placeholder="ID do agente de suporte" min="1">
+            <button class="btn-primary" id="relatorioFiltrarBtn">Filtrar</button>
+            <button class="action-icon" id="relatorioLimparBtn" title="Limpar filtro">✖️</button>
+          </div>
+        </div>
+
+        <div class="table-card card-anim" style="--delay:0;margin-top:14px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Empresa</th>
+                <th>Tipo de Alerta</th>
+                <th>Resolução</th>
+                <th>Máquina Afetada</th>
+                <th>Agente de Suporte</th>
+                <th>Departamento</th>
+                <th>Data/Hora</th>
+              </tr>
+            </thead>
+            <tbody id="relatorioTableBody"></tbody>
+          </table>
+          <div id="relatorioVazio" class="table-empty" hidden>Nenhum registro de suporte encontrado.</div>
+        </div>
+      </section>
+
+      <section class="view" id="view-seguranca">
+        <div class="placeholder-view">
+          <div class="placeholder-icon">🛡️</div>
+          <h2>Distribuição e Segurança</h2>
+          <p>Em breve as configurações de segurança e permissões estarão aqui.</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-sistema">
+        <div class="placeholder-view">
+          <div class="placeholder-icon">🔧</div>
+          <h2>Sistema e Governança</h2>
+          <p>Em breve políticas de governança e status do sistema aparecerão aqui.</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-config">
+        <div class="placeholder-view">
+          <div class="placeholder-icon">⚙️</div>
+          <h2>Configurações</h2>
+          <p>Em breve as preferências gerais do Nexus Air estarão disponíveis aqui.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="usuarioModalOverlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="usuarioModalTitulo">Novo Usuário</h3>
+      <button class="modal-close" id="usuarioModalClose" aria-label="Fechar">✕</button>
+    </div>
+
+    <div class="form-alert" id="usuarioModalAlert" hidden></div>
+
+    <form id="usuarioForm">
+      <input type="hidden" id="usuarioId">
+      <div class="form-group">
+        <label for="usuarioNome">Nome completo</label>
+        <input type="text" id="usuarioNome" required>
+      </div>
+      <div class="form-group">
+        <label for="usuarioEmail">E-mail</label>
+        <input type="email" id="usuarioEmail" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="usuarioCargo">Cargo</label>
+          <input type="text" id="usuarioCargo" placeholder="Opcional">
+        </div>
+        <div class="form-group">
+          <label for="usuarioDepartamento">Departamento</label>
+          <input type="text" id="usuarioDepartamento" placeholder="Opcional">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="usuarioTipoAcesso">Tipo de acesso</label>
+          <select id="usuarioTipoAcesso">
+            <option value="padrao">Padrão</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usuarioSenha">Senha</label>
+          <input type="password" id="usuarioSenha" placeholder="Mín. 6 caracteres" minlength="6">
+        </div>
+      </div>
+      <p class="form-hint" id="usuarioSenhaHint" hidden>Deixe em branco para manter a senha atual.</p>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary" id="usuarioCancelarBtn">Cancelar</button>
+        <button type="submit" class="btn-primary" id="usuarioSalvarBtn">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
