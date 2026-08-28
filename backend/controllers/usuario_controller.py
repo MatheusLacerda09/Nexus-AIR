@@ -9,17 +9,6 @@ usuario_bp = Blueprint("usuarios", __name__, url_prefix="/api/usuarios")
 
 
 class UsuarioController(MethodView):
-    """
-    Controller (classe, via flask.views.MethodView) do CRUD de usuarios.
-
-    GET    /api/usuarios       -> lista todos
-    GET    /api/usuarios/<id>  -> busca um usuario
-    POST   /api/usuarios       -> cria um usuario
-    PUT    /api/usuarios/<id>  -> atualiza um usuario
-    DELETE /api/usuarios/<id>  -> remove um usuario
-
-    Todas as rotas exigem login (sessao ativa).
-    """
 
     decorators = [login_obrigatorio]
 
