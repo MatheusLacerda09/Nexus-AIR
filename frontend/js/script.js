@@ -12,13 +12,9 @@ let notificacoes = [
   "Relatório REL-00450 Falhou em VM2 (08:45)"
 ];
 
-// Agora tudo roda a partir do mesmo servidor Flask, então as chamadas de
-// API usam caminhos relativos em vez de um host/porta fixos.
 const API_ALERTAS_URL = '/api/alertas/dashboard';
 
 const timersAtivos = {};
-
-/* ==================== Autenticação (guarda de sessão) ==================== */
 
 async function exigirAutenticacao(){
   try{
@@ -63,8 +59,6 @@ function initMenuUsuario(){
     window.location.href = '/login';
   });
 }
-
-/* ==================== CRUD de Usuários ==================== */
 
 let usuarioEditandoId = null;
 
@@ -224,8 +218,6 @@ function initUsuariosCRUD(){
     }
   });
 }
-
-/* ==================== Relatório de Suporte ==================== */
 
 const API_RELATORIO_SUPORTE_URL = '/api/alertas/relatorio-suporte';
 
