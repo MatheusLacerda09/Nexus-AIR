@@ -1,5 +1,4 @@
 class RelatorioSuporteService:
-    """Regra de negocio do relatorio de resolucao de suporte."""
 
     def __init__(self, alerta_repository):
         self.alerta_repo = alerta_repository
