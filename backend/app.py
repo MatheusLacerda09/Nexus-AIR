@@ -13,9 +13,6 @@ FRONTEND_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "fr
 
 app = Flask(__name__, static_folder=FRONTEND_DIR, static_url_path="")
 app.secret_key = Config.SECRET_KEY
-
-# Cookie de sessao (login) via mesma origem: o proprio Flask agora serve
-# o frontend, entao nao ha mais necessidade de dois servidores/portas.
 app.config.update(
     SESSION_COOKIE_HTTPONLY=True,
     SESSION_COOKIE_SAMESITE="Lax",
@@ -23,7 +20,6 @@ app.config.update(
 
 CORS(app, supports_credentials=True)
 
-# --- API (Blueprints / Controllers) ---
 app.register_blueprint(auth_bp)
 app.register_blueprint(usuario_bp)
 app.register_blueprint(alerta_bp)
@@ -34,8 +30,6 @@ app.register_blueprint(sistema_bp)
 def api_status():
     return {"status": "online", "servico": "Nexus Air API"}
 
-
-# --- Frontend (paginas estaticas) ---
 @app.route("/")
 def home():
     return send_from_directory(app.static_folder, "index.html")
