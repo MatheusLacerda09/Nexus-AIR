@@ -6,7 +6,6 @@ class AlertaRepository:
 
     def buscar_alertas_detalhados(self, tipo_alerta=None):
         cursor = self.db.cursor(dictionary=True)
-        # Executa a Procedure via CALL
         cursor.callproc('sp_obter_alertas_detalhados', [tipo_alerta])
         
         resultados = []
