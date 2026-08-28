@@ -7,7 +7,6 @@ sistema_bp = Blueprint("sistema", __name__, url_prefix="/api/sistema")
 
 
 class SistemaController:
-    """Controller (classe) da rota de status de sistema (CPU/uptime)."""
 
     def __init__(self):
         self.service = SistemaService()
