@@ -7,13 +7,6 @@ REGEX_EMAIL = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 
 
 class UsuarioService:
-    """
-    Regras de negocio em torno do usuario: validacoes, cadastro (signup),
-    autenticacao (login) e o CRUD administrativo de usuarios.
-
-    O Service nunca fala SQL diretamente: sempre passa pelo UsuarioModel,
-    que por sua vez delega ao UsuarioRepository.
-    """
 
     CAMPOS_ATUALIZAVEIS = (
         "nome", "cargo", "departamento", "setor", "telefone", "cpf",
@@ -21,9 +14,6 @@ class UsuarioService:
         "curriculo", "data_ferias", "faltas",
     )
 
-    # ------------------------------------------------------------
-    # Cadastro (signup) e login
-    # ------------------------------------------------------------
     def cadastrar(self, dados):
         nome = (dados.get("nome") or "").strip()
         email = (dados.get("email") or "").strip().lower()
@@ -55,10 +45,6 @@ class UsuarioService:
         email = (email or "").strip().lower()
         usuario = UsuarioModel.buscar_por_email(email)
 
-        # Mensagens separadas a pedido do projeto: ajuda o usuario a saber
-        # exatamente o que errou. Trade-off: permite descobrir por tentativa
-        # se um e-mail esta cadastrado (enumeracao de usuarios). Para um
-        # sistema publico/producao, prefira a mensagem generica de antes.
         if not usuario:
             raise NaoAutenticado("Usuario incorreto.")
         if not usuario.verificar_senha(senha):
@@ -66,9 +52,6 @@ class UsuarioService:
 
         return usuario
 
-    # ------------------------------------------------------------
-    # CRUD administrativo (tela de gerenciamento de usuarios)
-    # ------------------------------------------------------------
     def listar(self):
         return UsuarioModel.listar_todos()
 
