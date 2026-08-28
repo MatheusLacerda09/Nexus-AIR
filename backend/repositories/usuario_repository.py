@@ -2,12 +2,6 @@ from database import get_db_connection
 
 
 class UsuarioRepository:
-    """
-    Unica camada responsavel por falar SQL com a tabela `usuario`.
-
-    Nem o Model nem o Service conhecem colunas ou instrucoes SQL: eles
-    apenas chamam estes metodos e recebem/entregam dicionarios simples.
-    """
 
     COLUNAS = (
         "id, cliente, nome, senha, email, cargo, departamento, setor, "
