@@ -33,10 +33,6 @@ CREATE TABLE IF NOT EXISTS maquinas_virtuais (
     status_zabbix VARCHAR(50) NOT NULL
 );
 
--- Tabela de usuarios: sustenta o login/cadastro (autenticacao) e a tela de
--- CRUD de usuarios. Apenas nome, senha e email sao obrigatorios no cadastro;
--- os demais campos (dados de RH) sao opcionais e podem ser preenchidos depois
--- pela tela de gerenciamento de usuarios.
 CREATE TABLE IF NOT EXISTS usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cliente VARCHAR(100) DEFAULT 'Nexus Air',
