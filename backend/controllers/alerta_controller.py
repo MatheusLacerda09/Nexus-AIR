@@ -10,13 +10,6 @@ alerta_bp = Blueprint("alertas", __name__, url_prefix="/api/alertas")
 
 
 class AlertaController:
-    """
-    Controller (classe) responsavel pelas rotas de alertas/dashboard.
-
-    Cada metodo abre sua propria conexao, monta o Repository e repassa
-    para o Service correspondente -- o Controller nunca executa SQL nem
-    contem regra de negocio, apenas traduz HTTP <-> Service.
-    """
 
     def dashboard(self):
         tipo_alerta = request.args.get("tipo", None)
