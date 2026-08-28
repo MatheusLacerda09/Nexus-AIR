@@ -3,12 +3,6 @@ import psutil
 
 
 class SistemaService:
-    """
-    Le metricas reais da maquina onde o Flask esta rodando (CPU, nucleos,
-    tempo ligado). Antes essa coleta era feita por um servico Node.js a
-    parte; com `psutil` conseguimos o mesmo dado direto em Python, o que
-    elimina a necessidade de um segundo backend.
-    """
 
     def obter_status(self):
         uso_percentual = psutil.cpu_percent(interval=0.3)
