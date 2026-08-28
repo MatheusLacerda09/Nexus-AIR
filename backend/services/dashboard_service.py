@@ -1,5 +1,4 @@
 class DashboardService:
-    """Monta o payload do dashboard combinando alertas e maquinas criticas."""
 
     def __init__(self, alerta_repository):
         self.alerta_repo = alerta_repository
