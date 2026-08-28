@@ -1,10 +1,3 @@
-"""
-Controle de acesso simples baseado na sessao (cookie) do Flask.
-
-Login e feito via backend/controllers/auth_controller.py, que grava o id
-do usuario em `session['usuario_id']`. As rotas que exigem autenticacao
-usam o decorator `login_obrigatorio` abaixo.
-"""
 from functools import wraps
 
 from flask import session, jsonify
