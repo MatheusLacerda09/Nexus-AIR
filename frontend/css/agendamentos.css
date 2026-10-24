@@ -1,0 +1,58 @@
+.ag-titulo{margin:26px 0 2px}
+.ag-lead{margin:0 0 4px;font-size:.86rem;color:var(--text-muted,rgb(var(--pv126-117-149)))}
+.ag-stack{display:grid;gap:16px;margin-top:14px}
+.ag-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px 28px;align-items:start}
+.ag-col{min-width:0}
+.ag-campo[hidden]{display:none!important}
+.ag-linha{display:flex;gap:10px;align-items:center}
+.ag-linha>*{margin-bottom:10px!important}
+.ag-linha select{flex:1 1 auto}
+.ag-linha input[type=time]{flex:0 0 148px;width:148px}
+.automation-form .ag-rotulo{display:block;margin:2px 0 6px;font-size:.78rem;font-weight:600;color:var(--text-dark,rgb(var(--pv41-33-63)))}
+.ag-dias{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.automation-form .ag-chip{position:relative;display:inline-flex}
+.automation-form .ag-chip input{position:absolute;opacity:0;width:0;height:0;margin:0;padding:0}
+.ag-chip span{min-width:44px;padding:7px 10px;text-align:center;border-radius:999px;border:1px solid rgba(var(--pv102-73-172),.25);font-size:.8rem;cursor:pointer;user-select:none;transition:background .15s,color .15s,border-color .15s}
+.ag-chip input:checked+span{background:var(--purple,#7751e0);border-color:var(--purple,#7751e0);color:#fff}
+.ag-chip input:focus-visible+span{outline:2px solid var(--purple,#7751e0);outline-offset:2px}
+.ag-inline{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px;font-size:.86rem}
+.automation-form .ag-inline input{width:84px;margin:0}
+.automation-form .ag-inline input[type=date]{width:auto}
+.ag-dica{margin:-4px 0 10px;font-size:.76rem;color:var(--text-muted,rgb(var(--pv126-117-149)))}
+.ag-previa{margin:2px 0 14px;padding:10px 12px;border-radius:10px;background:rgba(var(--pv122-90-210),.06);font-size:.82rem;line-height:1.55;min-height:20px}
+.ag-previa strong{font-weight:600}
+.ag-previa.is-aviso{color:rgb(var(--pv101-90-127))}
+.automation-form details{margin:0 0 10px;border:1px solid rgba(var(--pv102-73-172),.18);border-radius:10px;padding:8px 12px}
+.automation-form summary{cursor:pointer;font-size:.84rem;font-weight:600}
+.automation-form details[open] summary{margin-bottom:10px}
+.ag-secoes{display:grid;grid-template-columns:1fr;gap:6px}
+.automation-form .ag-check{display:flex;align-items:flex-start;gap:8px;font-size:.8rem;line-height:1.35;cursor:pointer}
+.automation-form .ag-check input{width:auto;margin:2px 0 0;flex:0 0 auto}
+.ag-tabela{width:100%}
+.ag-tabela td{vertical-align:top}
+.ag-tabela .ag-sub{word-break:normal;overflow-wrap:anywhere}
+.ag-sub{display:block;margin-top:2px;font-size:.76rem;color:var(--text-muted,rgb(var(--pv126-117-149)));word-break:break-all}
+.ag-acoes{display:flex;flex-wrap:wrap;gap:6px}
+.ag-acoes button{padding:5px 10px;border-radius:8px;border:1px solid rgba(var(--pv102-73-172),.25);background:none;color:var(--purple,#7751e0);font:inherit;font-size:.78rem;cursor:pointer}
+.ag-acoes button:hover{background:var(--purple-pale,rgba(119,81,224,.1))}
+.ag-acoes button:focus-visible{outline:2px solid var(--purple,#7751e0);outline-offset:2px}
+.ag-acoes button[data-ag-excluir]{color:#bc3b54;border-color:rgba(188,59,84,.3)}
+.automation-status.is-ok{background:rgba(22,132,83,.12);color:#168453}
+.automation-status.is-falha{background:rgba(188,59,84,.12);color:#bc3b54}
+.automation-status.is-run{background:rgba(119,81,224,.14)}
+@media(max-width:900px){.ag-cols{grid-template-columns:1fr}.ag-secoes{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.ag-chip span{transition:none}}
+
+.ag-btn-banco{flex:0 0 auto;white-space:nowrap}
+.ag-banco-novo{display:grid;gap:8px;margin:-2px 0 12px;padding:12px;border:1px dashed rgba(var(--pv91-46-224),.45);border-radius:12px;background:rgba(var(--pv91-46-224),.06)}
+.ag-banco-novo[hidden]{display:none}
+.ag-banco-novo input{margin:0!important}
+.ag-banco-acoes{display:flex;gap:8px;flex-wrap:wrap}
+
+.ag-duas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ag-duas>*{margin-bottom:10px!important;min-width:0}
+.ag-modo{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.automation-form .ag-uma-vez{margin:0 0 12px}
+.ag-campo[data-modo][hidden]{display:none!important}
+@media(max-width:520px){.ag-duas{grid-template-columns:1fr}}
+

@@ -1,0 +1,135 @@
+classDiagram
+    direction TB
+
+    class EmpresaModel {
+        <<Model>>
+        +int id
+        +str nome
+        +str cnpjs
+        +str endereco
+        +str telefone
+        +str email
+        +str ceos
+        +str setores
+        +str departamentos
+        +to_dict() dict
+        +salvar() EmpresaModel
+        +excluir() bool
+        +buscar_por_id(empresa_id)$ EmpresaModel
+        +buscar_por_cnpj(cnpj)$ EmpresaModel
+        +buscar_por_email(email)$ EmpresaModel
+        +listar_todos()$ list
+        +listar_nomes()$ list
+    }
+
+    class UsuarioModel {
+        <<Model>>
+        +int id
+        +str cliente
+        +str nome
+        +str senha
+        +str email
+        +str cargo
+        +str departamento
+        +str setor
+        +str telefone
+        +str cpf
+        +date data_nascimento
+        +str sexo
+        +str tipo_acesso
+        +str horario_trabalho
+        +str curriculo
+        +date data_ferias
+        +int faltas
+        +datetime criado_em
+        +int local_trabalho_id
+        +float volume_musica
+        +str foto_mime
+        +str idioma
+        +to_dict() dict
+        +definir_senha(senha_texto_puro)
+        +verificar_senha(senha_texto_puro) bool
+        +salvar() UsuarioModel
+        +excluir() bool
+        +buscar_por_id(usuario_id)$ UsuarioModel
+        +buscar_por_email(email)$ UsuarioModel
+        +buscar_por_cpf(cpf)$ UsuarioModel
+        +listar_todos()$ list
+        +listar_por_cliente(cliente)$ list
+        +listar_nomes()$ list
+        +buscar_foto(usuario_id)$
+        +atualizar_foto(usuario_id, conteudo, mime)$
+    }
+
+    class LocalTrabalhoModel {
+        <<Model>>
+        +int id
+        +str nome
+        +str cnpj
+        +to_dict() dict
+        +buscar_por_id(local_trabalho_id)$ LocalTrabalhoModel
+        +buscar_por_nome(nome)$ LocalTrabalhoModel
+        +obter_ou_criar(nome, cnpj)$ LocalTrabalhoModel
+        +listar_todos()$ list
+    }
+
+    class AlertaModel {
+        <<Model>>
+        +int id
+        +str ip_maquina
+        +str ip_banco
+        +str tipo_alerta
+        +str status_alerta
+        +str contexto
+        +datetime horario
+        +str origem
+        +to_dict() dict
+    }
+
+    class MaquinaVirtualModel {
+        <<Model>>
+        +int id
+        +str hostname
+        +str ip
+        +str status_olvm
+        +decimal consumo_cpu
+        +decimal consumo_ram
+        +str status_zabbix
+        +to_dict() dict
+    }
+
+    class BancoModel {
+        <<Model>>
+        +int id
+        +str ip
+        +str status_zabbix
+        +str status_olvm
+        +str log_erro
+        +decimal consumo_memoria
+        +to_dict() dict
+    }
+
+    class EmpresaRepository {
+        <<Repository>>
+    }
+    class UsuarioRepository {
+        <<Repository>>
+    }
+    class LocalTrabalhoRepository {
+        <<Repository>>
+    }
+    class cargos {
+        <<módulo>>
+        +pode_gerenciar_usuarios(cargo, tipo_acesso) bool
+    }
+
+    LocalTrabalhoModel "0..1" o-- "*" UsuarioModel : local_trabalho_id (FK)
+    EmpresaModel "1" --> "*" UsuarioModel : cliente = nome
+    EmpresaModel "1" --> "*" AlertaModel : cliente = nome
+    MaquinaVirtualModel "0..1" <-- "*" AlertaModel : ip_maquina = ip (FK)
+    BancoModel "0..1" <-- "*" AlertaModel : ip_banco = ip (FK)
+
+    EmpresaModel ..> EmpresaRepository : usa
+    UsuarioModel ..> UsuarioRepository : usa
+    UsuarioModel ..> cargos : usa
+    LocalTrabalhoModel ..> LocalTrabalhoRepository : usa

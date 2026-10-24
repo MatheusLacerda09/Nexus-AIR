@@ -1,0 +1,74 @@
+:root {
+  --ui-accent: #6d45e8;
+  --ui-accent-strong: #5428cf;
+  --ui-accent-soft: rgba(109, 69, 232, 0.12);
+  --ui-hover: rgba(109, 69, 232, 0.08);
+  --ui-focus: rgba(109, 69, 232, 0.22);
+}
+html[data-theme="dark"] {
+  --ui-accent: #a78bfa;
+  --ui-accent-strong: #c4b5fd;
+  --ui-accent-soft: rgba(167, 139, 250, 0.16);
+  --ui-hover: rgba(167, 139, 250, 0.12);
+  --ui-focus: rgba(167, 139, 250, 0.28);
+}
+.app .settings-card,
+.app .placeholder-view,
+.app .alerts-card,
+.app .profile-field,
+.app .profile-name-card,
+.app .profile-security-card {
+  border-color: var(--border-color);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.app .settings-card:hover,
+.app .profile-field:hover,
+.app .alerts-card:hover {
+  border-color: var(--ui-accent);
+  box-shadow: 0 10px 24px rgba(34, 20, 80, 0.12);
+}
+html[data-theme="dark"] .app .settings-card:hover,
+html[data-theme="dark"] .app .profile-field:hover,
+html[data-theme="dark"] .app .alerts-card:hover {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+}
+.app button:not(:disabled):hover,
+.app .nav-item:hover {
+  border-color: var(--ui-accent);
+}
+.app button:focus-visible,
+.app input:focus-visible,
+.app select:focus-visible,
+.app textarea:focus-visible {
+  outline: 2px solid var(--ui-focus);
+  outline-offset: 2px;
+}
+.language-dropdown {
+  background: var(--surface) !important;
+  border-color: var(--ui-accent) !important;
+  box-shadow: 0 14px 32px rgba(28, 15, 72, 0.22) !important;
+}
+html[data-theme="dark"] .language-dropdown {
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45) !important;
+}
+.language-dropdown button:hover,
+.language-dropdown button.is-active {
+  background: var(--ui-hover) !important;
+  color: var(--ui-accent) !important;
+}
+html[data-theme="dark"] .app,
+html[data-theme="dark"] .content,
+html[data-theme="dark"] .command-results {
+  scrollbar-color: var(--purple) transparent !important;
+}
+html[data-theme="dark"] .app::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .content::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .command-results::-webkit-scrollbar-thumb {
+  background-color: var(--purple) !important;
+}
+html[data-theme="dark"] .app::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .content::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .command-results::-webkit-scrollbar-thumb:hover {
+  background-color: var(--purple-light) !important;
+}

@@ -1,0 +1,80 @@
+.user-chip-avatar{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;flex:0 0 22px;overflow:hidden;border-radius:50%;background:rgba(var(--pv91-46-224),.1);}
+.user-chip-avatar img,.user-profile-button-icon img{width:100%;height:100%;object-fit:cover;border-radius:inherit;}
+.user-chip-avatar .ic{width:20px;height:20px;}
+.user-profile-button-icon{display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:50%;background:var(--purple-pale);}
+.user-profile-button-icon img{width:100%;height:100%;}
+.profile-hero .profile-avatar{display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.profile-hero .profile-avatar img{width:100%;height:100%;object-fit:cover;border-radius:inherit;}
+.profile-photo-card{display:grid;grid-template-columns:minmax(180px,1fr) minmax(300px,1.5fr) auto;align-items:center;gap:16px;margin-bottom:18px;padding:16px 18px;border:1px solid rgba(var(--pv122-77-255),.17);border-radius:16px;background:var(--surface);box-shadow:var(--shadow-sm);}
+.profile-photo-copy strong{display:block;color:var(--text-dark);font-size:12px;font-weight:750;}
+.profile-photo-copy small{display:block;margin-top:5px;color:var(--text-muted);font-size:10px;line-height:1.35;}
+.profile-photo-form{display:flex;align-items:center;gap:9px;min-width:0;}
+.profile-photo-picker{display:flex;align-items:center;justify-content:center;min-width:0;flex:1;padding:10px 12px;border:1px dashed rgba(var(--pv91-46-224),.45);border-radius:10px;background:var(--input-bg);color:var(--purple);font-size:11px;font-weight:700;cursor:pointer;transition:background .2s,border-color .2s,transform .2s;}
+.profile-photo-picker:hover{border-color:var(--purple);background:var(--purple-pale);transform:translateY(-1px);}
+.profile-photo-picker input{display:none;}
+#perfilFotoBtn{padding:10px 14px;font-size:11px;white-space:nowrap;}
+#perfilFotoBtn:disabled{opacity:.58;cursor:not-allowed;}
+#perfilFotoStatus{min-width:110px;color:var(--text-muted);font-size:10px;font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+#perfilFotoStatus.is-success{color:var(--green);}
+#perfilFotoStatus.is-error{color:var(--red);}
+@media (max-width:780px){.profile-photo-card{grid-template-columns:1fr;gap:10px;}#perfilFotoStatus{min-height:14px;}}
+@media (max-width:500px){.profile-photo-form{align-items:stretch;flex-direction:column;}.profile-photo-picker,#perfilFotoBtn{width:100%;}}
+
+.profile-photo-editor-overlay{position:fixed;inset:0;z-index:1200;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(var(--pv22-12-53),.62);opacity:0;transition:opacity .22s ease;backdrop-filter:blur(8px);}
+.profile-photo-editor-overlay.show{opacity:1;}
+.profile-photo-editor{width:min(100%,430px);padding:20px;border:1px solid rgba(var(--pv122-77-255),.25);border-radius:22px;background:var(--surface);box-shadow:0 25px 70px rgba(16,8,50,.34);transform:translateY(10px) scale(.97);transition:transform .28s var(--bounce);}
+.profile-photo-editor-overlay.show .profile-photo-editor{transform:translateY(0) scale(1);}
+.profile-photo-editor-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;}
+.profile-photo-editor-head>div{display:flex;min-width:0;flex:1;flex-direction:column;gap:4px;}
+.profile-photo-editor-kicker{color:var(--purple);font-size:9px;font-weight:800;letter-spacing:1.2px;}
+.profile-photo-editor-head strong{color:var(--text-dark);font-size:16px;}
+.profile-photo-editor-head small{color:var(--text-muted);font-size:11px;line-height:1.4;}
+.profile-photo-editor-close{width:28px;height:28px;border:0;border-radius:9px;background:var(--surface-2);color:var(--text-muted);font-size:20px;line-height:1;cursor:pointer;}
+.profile-photo-editor-close:hover{background:var(--purple-pale);color:var(--purple);}
+.profile-photo-crop-stage{position:relative;width:min(100%,330px);aspect-ratio:1;margin:0 auto 16px;overflow:hidden;border:2px solid var(--purple);border-radius:18px;background:repeating-conic-gradient(#f2efff 0 25%,#e8e2ff 0 50%) 50%/24px 24px;cursor:grab;touch-action:none;box-shadow:0 0 0 5px var(--purple-pale);}
+.profile-photo-crop-stage::after{position:absolute;inset:0;border:1px solid rgba(255,255,255,.8);border-radius:16px;box-shadow:inset 0 0 0 999px rgba(var(--pv32-16-82),.08);content:"";pointer-events:none;}
+.profile-photo-crop-stage.is-dragging{cursor:grabbing;}
+.profile-photo-crop-image{position:absolute;left:50%;top:50%;max-width:none;user-select:none;pointer-events:none;transform-origin:center center;}
+.profile-photo-zoom{display:flex;align-items:center;gap:10px;margin:0 auto 17px;color:var(--text-muted);font-size:11px;font-weight:700;}
+.profile-photo-zoom input{min-width:0;flex:1;accent-color:var(--purple);}
+.profile-photo-zoom output{width:42px;color:var(--purple);font-size:11px;text-align:right;}
+.profile-photo-editor-actions{display:flex;justify-content:flex-end;gap:9px;}
+.profile-photo-editor-actions button{padding:10px 14px;font-size:11px;}
+@media (max-width:500px){.profile-photo-editor{padding:16px;border-radius:18px;}.profile-photo-editor-actions{flex-direction:column-reverse;}.profile-photo-editor-actions button{width:100%;}}
+
+.user-chip-avatar [hidden],.user-profile-button-icon [hidden],.profile-avatar [hidden]{display:none!important;}
+.user-chip-avatar img,.user-profile-button-icon img,.profile-hero .profile-avatar img{display:block;}
+.user-profile-open,.profile-back{position:relative;justify-content:center!important;text-align:center;}
+.user-profile-open>span,.profile-back>span{display:block;flex:1;text-align:center;}
+.user-profile-open>.ic,.profile-back>.ic{position:absolute;right:15px;flex:0 0 auto;}
+.user-profile-open{min-height:42px!important;border-color:rgba(var(--pv122-77-255),.48)!important;border-radius:13px!important;background:linear-gradient(135deg,rgba(var(--pv122-77-255),.2),rgba(var(--pv143-101-255),.08))!important;box-shadow:0 8px 18px rgba(var(--pv91-46-224),.12),inset 0 1px 0 rgba(255,255,255,.08)!important;}
+.user-profile-open:hover{background:linear-gradient(135deg,rgba(var(--pv122-77-255),.34),rgba(var(--pv143-101-255),.14))!important;box-shadow:0 12px 24px rgba(var(--pv91-46-224),.2),inset 0 1px 0 rgba(255,255,255,.12)!important;}
+.profile-back.btn-secondary{min-height:46px!important;min-width:210px!important;padding:12px 44px 12px 18px!important;border:1px solid rgba(var(--pv122-77-255),.45)!important;border-radius:14px!important;background:linear-gradient(135deg,rgba(var(--pv122-77-255),.16),rgba(var(--pv143-101-255),.05))!important;color:var(--purple)!important;box-shadow:0 10px 22px rgba(var(--pv91-46-224),.1),inset 0 1px 0 rgba(255,255,255,.1)!important;}
+.profile-back.btn-secondary:hover{transform:translateY(-2px);border-color:var(--purple)!important;background:linear-gradient(135deg,rgba(var(--pv122-77-255),.28),rgba(var(--pv143-101-255),.1))!important;box-shadow:0 14px 28px rgba(var(--pv91-46-224),.18),inset 0 1px 0 rgba(255,255,255,.14)!important;}
+#profileNameForm .btn-primary,#perfilFotoBtn,#perfilSenhaBtn{min-height:42px;border:1px solid rgba(var(--pv143-101-255),.7);border-radius:12px;background:linear-gradient(135deg,rgb(var(--pv143-101-255)),rgb(var(--pv99-55-214)));box-shadow:0 8px 17px rgba(var(--pv91-46-224),.2),inset 0 1px 0 rgba(255,255,255,.2);color:#fff;transition:transform .22s var(--bounce),box-shadow .22s var(--ease),filter .22s var(--ease);}
+#profileNameForm .btn-primary:hover,#perfilFotoBtn:hover:not(:disabled),#perfilSenhaBtn:hover{transform:translateY(-2px);filter:saturate(1.12) brightness(1.06);box-shadow:0 12px 24px rgba(var(--pv91-46-224),.28),inset 0 1px 0 rgba(255,255,255,.25);}
+#profileNameForm .btn-primary:focus-visible,.user-profile-open:focus-visible,.profile-back:focus-visible,#perfilFotoBtn:focus-visible,#perfilSenhaBtn:focus-visible{outline:3px solid rgba(var(--pv143-101-255),.3);outline-offset:3px;}
+
+.user-profile-open>span,.profile-back>span{position:absolute;left:50%;top:50%;width:max-content;max-width:calc(100% - 56px);transform:translate(-50%,-50%);flex:none;text-align:center;white-space:nowrap;}
+.nexus-has-profile-photo .user-chip-avatar,.nexus-has-profile-photo .user-profile-button-icon,.nexus-has-profile-photo .profile-hero .profile-avatar{background:transparent!important;box-shadow:none!important;border-color:transparent!important;}
+.nexus-has-profile-photo .user-chip-avatar{border-radius:50%;}
+.nexus-has-profile-photo .user-profile-button-icon,.nexus-has-profile-photo .profile-hero .profile-avatar{padding:0!important;}
+
+#perfilNomeStatus.is-warning{color:var(--orange);font-weight:700;}
+
+:root{--photo-checker-a:#f7f4ff;--photo-checker-b:#ebe5fb;}
+html[data-theme="dark"]{--photo-checker-a:rgb(var(--pv42-35-64));--photo-checker-b:#1e1830;}
+.profile-photo-crop-stage{background:repeating-conic-gradient(var(--photo-checker-a) 0 25%,var(--photo-checker-b) 0 50%) 50%/24px 24px;}
+
+html:not([data-theme="dark"]) .profile-field-company{border-color:var(--purple-pale-strong)!important;background:linear-gradient(145deg,var(--surface),var(--purple-pale))!important;}
+html:not([data-theme="dark"]) .profile-field-company .profile-field-icon{color:var(--purple)!important;background:var(--purple-pale)!important;}
+html:not([data-theme="dark"]) .profile-field-company:hover .profile-field-icon{background:var(--purple)!important;color:#fff!important;}
+html:not([data-theme="dark"]) .profile-hero{border-color:var(--border-color)!important;background:linear-gradient(120deg,var(--surface),var(--purple-pale),var(--surface-2))!important;}
+
+html[data-theme="dark"] .user-profile-open{border-color:var(--purple)!important;background:linear-gradient(135deg,var(--purple-pale),rgba(var(--pv255-194-102),.08))!important;box-shadow:0 8px 18px rgba(var(--pv242-169-60),.14),inset 0 1px 0 rgba(255,255,255,.08)!important;}
+html[data-theme="dark"] .user-profile-open:hover{background:linear-gradient(135deg,var(--purple-pale-strong),rgba(var(--pv255-194-102),.14))!important;box-shadow:0 12px 24px rgba(var(--pv242-169-60),.2),inset 0 1px 0 rgba(255,255,255,.12)!important;}
+html[data-theme="dark"] .profile-back.btn-secondary{border-color:var(--purple)!important;background:linear-gradient(135deg,var(--purple-pale),rgba(255,194,60,.05))!important;color:var(--purple-light)!important;}
+html[data-theme="dark"] .profile-back.btn-secondary:hover{background:linear-gradient(135deg,var(--purple-pale-strong),rgba(255,194,60,.1))!important;}
+html[data-theme="dark"] #profileNameForm .btn-primary,html[data-theme="dark"] #perfilFotoBtn,html[data-theme="dark"] #perfilSenhaBtn{border-color:var(--purple-light);background:linear-gradient(135deg,var(--purple-light),var(--purple));box-shadow:0 8px 17px rgba(var(--pv242-169-60),.2),inset 0 1px 0 rgba(255,255,255,.2);color:var(--on-accent);}
+html[data-theme="dark"] .profile-photo-card{border-color:var(--border-color);}
+

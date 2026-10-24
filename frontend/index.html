@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus Air · Painel</title>
+<link rel="icon" type="image/x-icon" href="/assets/branding/favicon.ico?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/branding/favicon-32.png?v=2">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/branding/favicon.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/branding/apple-touch-icon.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261004-config-espaco1">
+<link rel="stylesheet" href="/css/theme-polish.css?v=20261022-aba1">
+<link rel="stylesheet" href="/css/auth.css?v=20261022-zbx">
+<link rel="stylesheet" href="/css/profile-photo.css">
+<link rel="stylesheet" href="/css/automation.css?v=20261021-a1">
+<link rel="stylesheet" href="/css/agendamentos.css?v=20261022-bd3">
+<link rel="stylesheet" href="/css/ajustes-finais.css?v=20261022-hora3">
+<link rel="stylesheet" href="/css/conectores.css?v=20261023-cx7">
+<link rel="stylesheet" href="/css/orquestrador.css?v=20261022-o2">
+<link rel="stylesheet" href="/css/distribuicao-governanca.css?v=20261022-dg1">
+<script>
+  
+  (function(){
+    try{
+      // Padrão do produto é o modo claro: só ativa o escuro se o
+      // usuário já tiver escolhido isso antes nesta mesma tela/domínio.
+      if(localStorage.getItem('nexusTheme') === 'dark'){
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+      const accent = localStorage.getItem('nexusAccentGlobal1');
+      if(accent) document.documentElement.setAttribute('data-accent', accent);
+    }catch(e){  }
+  })();
+</script>
+</head>
+<body>
+<div class="nexus-splash" id="nexusSplash" role="dialog" aria-label="Abertura do Nexus Air" aria-modal="true">
+  <div class="ns-bg" aria-hidden="true">
+    <span class="ns-aurora ns-aurora-1"></span>
+    <span class="ns-aurora ns-aurora-2"></span>
+    <span class="ns-aurora ns-aurora-3"></span>
+    <span class="ns-beam ns-beam-1"></span>
+    <span class="ns-beam ns-beam-2"></span>
+    <span class="ns-beam ns-beam-3"></span>
+    <span class="ns-beam ns-beam-4"></span>
+    <span class="ns-beam ns-beam-5"></span>
+    <span class="ns-grid"></span>
+    <span class="ns-vignette"></span>
+  </div>
+  <div class="nexus-splash-dust" id="nexusSplashDust" aria-hidden="true"></div>
+  <span class="ns-spot" aria-hidden="true"></span>
+
+  <main class="ns-main">
+    <span class="ns-eyebrow"><i></i>Painel de gestão</span>
+
+    <div class="ns-stage" aria-hidden="true">
+      <span class="ns-halo"></span>
+      <svg class="ns-waves" viewBox="-300 -300 600 600" preserveAspectRatio="xMidYMid meet">
+        <path id="nsWave1" class="ns-wave ns-wave-1"/>
+        <path id="nsWave2" class="ns-wave ns-wave-2"/>
+        <path id="nsWave3" class="ns-wave ns-wave-3"/>
+        <path id="nsWave4" class="ns-wave ns-wave-4"/>
+        <path id="nsWave5" class="ns-wave ns-wave-5"/>
+      </svg>
+      <img class="ns-logo" src="/assets/logo.png?v=3" alt="">
+    </div>
+
+    <h1 class="ns-wordmark" aria-label="Nexus Air">
+      <span class="ns-word" aria-hidden="true"><b style="--i:0">N</b><b style="--i:1">E</b><b style="--i:2">X</b><b style="--i:3">U</b><b style="--i:4">S</b></span>
+      <span class="ns-word" aria-hidden="true"><b style="--i:5">A</b><b style="--i:6">I</b><b style="--i:7">R</b></span>
+    </h1>
+
+    <p class="ns-tagline"><span></span>Sistema inteligente em movimento<span></span></p>
+    <p class="ns-sub">Monitore, organize e acompanhe tudo em um só lugar, com alertas em tempo real e controle de acesso por cargo.</p>
+
+    <ul class="ns-chips" aria-label="Benefícios do Nexus Air">
+      <li class="ns-chip-explainer" tabindex="0">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>Monitoramento
+        <span class="ns-chip-panel"><strong>Monitoramento</strong><small>Tenha uma visão clara da infraestrutura em um só lugar.</small><em>O Nexus Air transforma dados espalhados em decisões rápidas.</em></span>
+      </li>
+      <li class="ns-chip-explainer" tabindex="0">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>Alertas
+        <span class="ns-chip-panel"><strong>Alertas em tempo real</strong><small>Saiba o que precisa de atenção antes de virar um problema.</small><em>O Nexus Air prioriza sinais importantes e reduz o ruído.</em></span>
+      </li>
+      <li class="ns-chip-explainer" tabindex="0">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Usuários e cargos
+        <span class="ns-chip-panel"><strong>Usuários e cargos</strong><small>Organize acessos por pessoa, equipe e responsabilidade.</small><em>O Nexus Air une colaboração e controle sem complicar a operação.</em></span>
+      </li>
+    </ul>
+
+    <button type="button" class="ns-cta" id="nexusSplashEnter">
+      <span class="ns-cta-label">Entrar no painel</span>
+      <svg class="ns-cta-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+    <small class="ns-hint">Clique em “Entrar no painel” para continuar</small>
+  </main>
+
+  <div class="ns-player" aria-label="Trilha sonora de fundo">
+    <div class="ns-viz" id="nexusSplashVisualizer" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="ns-player-info">
+      <span class="ns-track" id="nexusSplashTrack">Preparando a trilha sonora</span>
+      <span class="ns-status" id="nexusSplashStatus">Pastel Ghost</span>
+      <span class="ns-progress" aria-hidden="true"><i id="nexusSplashProgress"></i></span>
+    </div>
+    <div class="ns-controls">
+      <button type="button" class="ns-ctrl" id="nexusSplashPrev" aria-label="Música anterior" title="Música anterior">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14"/><path class="f" d="M19 5.5v13L9 12z"/></svg>
+      </button>
+      <button type="button" class="ns-ctrl ns-ctrl-main" id="nexusSplashPlay" aria-label="Pausar ou tocar música" title="Pausar / tocar">
+        <svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M8 5.5v13l11-6.5z"/></svg>
+        <svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+      </button>
+      <button type="button" class="ns-ctrl" id="nexusSplashNext" aria-label="Próxima música" title="Próxima música">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14"/><path class="f" d="M5 5.5v13L15 12z"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<svg class="sr-only" aria-hidden="true">
+  <symbol id="ic-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.6"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.6"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.6"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.9-3.6 3-5.4 6-5.4s5.1 1.8 6 5.4"/><circle cx="17" cy="8.5" r="2.4"/><path d="M15.7 12.4c2.2.3 3.6 1.8 4.3 4.6"/></symbol>
+  <symbol id="ic-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5l5-5"/><path d="M8 16.2 5.8 14a4 4 0 0 1 0-5.6l2-2a4 4 0 0 1 5.6 0"/><path d="M16 7.8 18.2 10a4 4 0 0 1 0 5.6l-2 2a4 4 0 0 1-5.6 0"/></symbol>
+  <symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.5 3.5 5.5 3.5 9S14.4 18.5 12 21M12 3c-2.4 2.5-3.5 5.5-3.5 9S9.6 18.5 12 21"/></symbol>
+  <symbol id="ic-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="ic-workflow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.6-5.7L20 8.5"/><path d="M20 4v4.5h-4.5"/><path d="M20 12a8 8 0 0 1-13.6 5.7L4 15.5"/><path d="M4 20v-4.5h4.5"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="12" width="3.4" height="8" rx="1"/><rect x="10.3" y="6" width="3.4" height="14" rx="1"/><rect x="16.6" y="9.5" width="3.4" height="10.5" rx="1"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l7 2.6v5.4c0 4.6-3 7.8-7 9-4-1.2-7-4.4-7-9V6.1l7-2.6Z"/><path d="M9 12l2.2 2.2L15.5 9.5"/></symbol>
+  <symbol id="ic-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="16" cy="12" r="2"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="10.5" cy="18" r="2"/></symbol>
+  <symbol id="ic-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r="7.2"/><line x1="12" y1="2.5" x2="12" y2="4.8"/><line x1="12" y1="19.2" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="4.8" y2="12"/><line x1="19.2" y1="12" x2="21.5" y2="12"/><line x1="5.3" y1="5.3" x2="6.9" y2="6.9"/><line x1="17.1" y1="17.1" x2="18.7" y2="18.7"/><line x1="18.7" y1="5.3" x2="17.1" y2="6.9"/><line x1="6.9" y1="17.1" x2="5.3" y2="18.7"/></symbol>
+  <symbol id="ic-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="20.5" y2="20.5"/></symbol>
+  <symbol id="ic-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.2 9.3a2.8 2.8 0 1 1 3.9 3.3c-.8.5-1.1.9-1.1 1.9"/><circle cx="12" cy="17" r="1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10a6 6 0 1 1 12 0c0 4 1.4 5.6 2 6.4H4c.6-.8 2-2.4 2-6.4Z"/><path d="M10 19a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="ic-volume" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5l4.5 3.5V6l-4.5 3.5H4Z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M18.5 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+  <symbol id="ic-user-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="9.6" r="3"/><path d="M6 18.2c1-2.6 3-3.9 6-3.9s5 1.3 6 3.9"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4.5 7 7.5 6 7.5-6"/></symbol>
+  <symbol id="ic-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4.5h8l1 3.2-1.8 11.8H8.8L7 7.7 8 4.5Z"/><path d="M9 4.5h6M9.5 9h5M9.5 12h4"/></symbol>
+  <symbol id="ic-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 20V5.5l7.5-2v16.5M12 8.5h7.5V20M3 20h18"/><path d="M7.5 8h1M7.5 11h1M7.5 14h1M15.5 11h1M15.5 14h1M15.5 17h1"/></symbol>
+  <symbol id="ic-logout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h3"/><path d="M15 16l5-4-5-4"/><line x1="20" y1="12" x2="9" y2="12"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.2"/><line x1="3.5" y1="9.5" x2="20.5" y2="9.5"/><line x1="8" y1="3" x2="8" y2="6.5"/><line x1="16" y1="3" x2="16" y2="6.5"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="ic-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="ic-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5.5" y1="5.5" x2="18.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="5.5" y2="18.5"/></symbol>
+  <symbol id="ic-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l.9-3.6L15.6 5.7a1.8 1.8 0 0 1 2.6 0l1.1 1.1a1.8 1.8 0 0 1 0 2.6L8.6 20.1 4 20Z"/><line x1="14.2" y1="7.1" x2="17.9" y2="10.8"/></symbol>
+  <symbol id="ic-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 7h15"/><path d="M9.5 7V4.8c0-.6.5-1.1 1.1-1.1h2.8c.6 0 1.1.5 1.1 1.1V7"/><path d="M6.5 7l.9 12.1c.05.9.8 1.6 1.7 1.6h6.8c.9 0 1.65-.7 1.7-1.6L18.5 7"/><line x1="10.2" y1="11" x2="10.2" y2="16.5"/><line x1="13.8" y1="11" x2="13.8" y2="16.5"/></symbol>
+  <symbol id="ic-loader" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3.2"/><path d="M12 17.8V21"/><path d="M4.9 4.9l2.3 2.3"/><path d="M16.8 16.8l2.3 2.3"/><path d="M3 12h3.2"/><path d="M17.8 12H21"/><path d="M4.9 19.1l2.3-2.3"/><path d="M16.8 7.2l2.3-2.3"/></symbol>
+  <symbol id="ic-play" viewBox="0 0 24 24"><path d="M7 5l12 7-12 7V5Z" fill="currentColor"/></symbol>
+  <symbol id="ic-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/></symbol>
+  <symbol id="ic-alert-triangle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.2 21 19H3L12 4.2Z"/><line x1="12" y1="10" x2="12" y2="14.5"/><circle cx="12" cy="17.2" r="0.9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24"><path d="M12.5 2 4 14h6l-1 8 9-13h-6l0.5-7Z" fill="currentColor"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></symbol>
+  <symbol id="ic-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" fill="currentColor"/></symbol>
+  <symbol id="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.3"/><line x1="12" y1="2.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/><line x1="2.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="4.2" y1="19.8" x2="6" y2="18"/><line x1="18" y1="6" x2="19.8" y2="4.2"/></symbol>
+  <symbol id="ic-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6.5" rx="2"/><rect x="3" y="13.5" width="18" height="6.5" rx="2"/><path d="M7 7.25h.01M7 16.75h.01M11 7.25h6M11 16.75h6"/></symbol>
+  <symbol id="ic-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6M9 9h2"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 20h14"/></symbol>
+  <symbol id="ic-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="ic-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+  <symbol id="ic-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+</svg>
+
+<div class="app">
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+      <div class="logo">
+        <div class="logo-icon">
+          <img src="/assets/logo.png?v=3" alt="Nexus Air">
+        </div>
+      </div>
+      <div class="sidebar-status"><span class="status-dot"></span><span class="sidebar-status-label">Sistema online</span></div>
+    <nav>
+      <div class="nav-highlight" id="navHighlight"></div>
+      <button class="nav-item active" data-view="dashboard">
+        <span class="nav-icon"><svg class="ic"><use href="#ic-grid"/></svg></span><span class="nav-label">Dashboard</span>
+      </button>
+      <button class="nav-item" data-view="usuarios">
+        <span class="nav-icon"><svg class="ic"><use href="#ic-users"/></svg></span><span class="nav-label">Usuários</span>
+      </button>
+      <button class="nav-item" data-view="conectores">
+        <span class="nav-icon"><svg class="ic"><use href="#ic-link"/></svg></span><span class="nav-label">Conectores de Dados</span>
+      </button>
+      <button class="nav-item" data-view="orquestrador">
+        <span class="nav-icon"><svg class="ic"><use href="#ic-workflow"/></svg></span><span class="nav-label">Orquestrador de Fluxos</span>
+      </button>
+      <button class="nav-item" data-view="relatorios">
+        <span class="nav-icon"><svg class="ic"><use href="#ic-chart"/></svg></span><span class="nav-label">Visualização de Relatórios</span>
+      </button>
+      <button class="nav-item" data-view="seguranca">
+        <span class="nav-icon"><svg class="ic"><use href="#ic-shield"/></svg></span><span class="nav-label">Distribuição e Segurança</span>
+      </button>
+      <button class="nav-item" data-view="sistema">
+        <span class="nav-icon"><svg class="ic"><use href="#ic-sliders"/></svg></span><span class="nav-label">Sistema e Governança</span>
+      </button>
+      <button class="nav-item" data-view="config">
+        <span class="nav-icon"><svg class="ic"><use href="#ic-gear"/></svg></span><span class="nav-label">Configurações</span>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <button class="burger" id="burgerBtn" aria-label="Abrir menu lateral" title="Abrir menu lateral">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="topbar-context"><span class="topbar-kicker">NEXUS AIR</span><strong id="topbarViewTitle">Visão geral</strong></div>
+      <div class="maquina-switch" id="maquinaSwitch" hidden>
+        <button type="button" class="maquina-trigger" id="maquinaTrigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="maquinaMenu" title="Escolher a máquina exibida no dashboard">
+          <span class="maquina-ico"><svg class="ic"><use href="#ic-server"/></svg></span>
+          <span class="maquina-switch-text"><small>Máquina</small><strong id="maquinaRotulo">Servidor Nexus (local)</strong></span>
+          <svg class="ic maquina-switch-seta"><use href="#ic-chevron-down"/></svg>
+        </button>
+        <ul class="maquina-menu" id="maquinaMenu" role="listbox" aria-label="Máquina exibida no dashboard" tabindex="-1" hidden></ul>
+        <select id="maquinaSelect" class="maquina-select-nativo" tabindex="-1" aria-hidden="true"><option value="local">Servidor Nexus (local)</option></select>
+      </div>
+      <div class="top-icons">
+        <div class="topbar-actions">
+        <button class="icon-btn" id="searchBtn" title="Buscar" aria-label="Buscar"><svg class="ic"><use href="#ic-search"/></svg></button>
+        <button class="icon-btn" id="helpBtn" title="Ajuda" aria-label="Abrir ajuda"><svg class="ic"><use href="#ic-help"/></svg></button>
+        <button class="icon-btn theme-toggle-btn theme-toggle-labeled" id="themeToggleBtn" type="button" title="Ativar modo escuro" aria-label="Ativar modo escuro" aria-pressed="false">
+          <svg class="ic theme-icon theme-icon--moon" aria-hidden="true"><use href="#ic-moon"/></svg>
+          <svg class="ic theme-icon theme-icon--sun" aria-hidden="true"><use href="#ic-sun"/></svg>
+        </button>
+
+        <div class="notif-wrapper">
+          <button class="icon-btn" id="notifBtn" title="Notificações">
+            <svg class="ic"><use href="#ic-bell"/></svg>
+            <span class="notif-badge" id="notifBadge">0</span>
+          </button>
+          <div class="notif-dropdown" id="notifDropdown">
+            <div class="notif-dropdown-title">Notificações</div>
+            <div id="notifList"></div>
+          </div>
+        </div>
+
+        <div class="user-menu-wrapper">
+          <button class="user-chip" id="userChipBtn"><span class="user-chip-avatar"><svg class="ic user-chip-avatar-fallback"><use href="#ic-user-circle"/></svg><img id="userChipFoto" alt="Foto de perfil" hidden></span> <span id="userChipNome">Usuário</span></button>
+          <div class="user-dropdown" id="userDropdown">
+            <div class="user-profile-summary">
+              <span class="user-profile-button-icon"><svg class="ic user-dropdown-avatar-fallback"><use href="#ic-user-circle"/></svg><img id="userDropdownFoto" alt="Foto de perfil" hidden></span>
+              <span class="user-profile-button-copy">
+              <span class="user-dropdown-nome" id="userDropdownNome">—</span>
+              <span class="user-dropdown-email" id="userDropdownEmail">—</span>
+              </span>
+            </div>
+            <button type="button" class="user-profile-open" id="userProfileBtn" title="Abrir meu perfil"><span>Abrir meu perfil</span><svg class="ic"><use href="#ic-arrow"/></svg></button>
+            <button class="user-dropdown-logout" id="logoutBtn"><svg class="ic"><use href="#ic-logout"/></svg> Sair</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <section class="view active" id="view-dashboard">
+        <h2 class="section-title" id="dashMaquinaTitulo">Saúde da Máquina Virtual (Oracle Linux VM):</h2>
+        <div class="maquina-aviso" id="maquinaAviso" role="status" hidden></div>
+        <div class="maquina-aviso" id="exclusaoAviso" role="status" hidden></div>
+
+        <div class="cards-row">
+          <div class="card card-anim" style="--delay:0">
+            <div class="card-title"><span class="bar"></span>CPU:</div>
+            <div class="card-body">
+              <canvas id="cpuChart" width="140" height="140"></canvas>
+              <div>
+                <div class="legend-mini"><strong id="cpuLivrePct">--%</strong>Não Utilizados</div>
+                <div class="legend-mini" style="margin-top:8px;"><strong id="cpuUsoPct">--%</strong>Utilização</div>
+                <div class="stat-line"><svg class="ic ic-solid"><use href="#ic-zap"/></svg> Velocidade: <span id="cpuVelocidade">--</span></div>
+                <div class="stat-line"><svg class="ic"><use href="#ic-clock"/></svg> Tempo de Atividade: <span id="cpuUptime">--:--:--</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-anim ram-card-interactive" style="--delay:1" role="button" tabindex="0" aria-label="Abrir histórico detalhado da memória RAM">
+            <div class="card-title"><span class="bar"></span>RAM:</div>
+            <div class="ram-chart-wrap"><canvas id="ramChart" aria-hidden="true"></canvas></div>
+            <div class="ram-live-stats"><span>Uso: <strong id="ramUsoPct">--%</strong></span><span>Total: <strong id="ramTotal">--</strong></span><span>Disponível: <strong id="ramLivre">--</strong></span></div>
+            <small class="ram-chart-hint">Clique para ver o histórico detalhado</small>
+          </div>
+
+          <div class="card card-anim" style="--delay:2">
+            <div class="card-title"><span class="bar"></span>Estatísticas de Tarefas:</div>
+            <div class="card-body">
+              <canvas id="tarefasChart" width="140" height="140"></canvas>
+              <div>
+                <div class="legend-mini"><strong>18%</strong>Falhas</div>
+                <div class="legend-mini" style="margin-top:8px;"><strong>82%</strong>Sucesso</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-title">Monitoramento de Processos &amp; Infraestrutura:</h2>
+
+        <div class="lower-row">
+          <div class="table-card card-anim" style="--delay:3">
+            <div class="table-header-row">
+              <div></div>
+              <div class="period-picker" data-period-picker>
+                <button type="button" class="date-range" id="dateRange" data-period-trigger aria-haspopup="dialog" aria-expanded="false"><svg class="ic"><use href="#ic-calendar"/></svg><span class="dr-label" data-period-label><span class="dr-dates"><span class="dr-date">01 jan 2026</span><svg class="ic dr-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="dr-date">31 dez 2026</span></span></span></button>
+                <div class="birthday-date-popover period-popover" data-period-popover role="dialog" aria-label="Selecionar período" hidden>
+                  <div class="period-modes" role="tablist" aria-label="Tipo de período">
+                    <button type="button" class="period-mode" role="tab" data-period-mode="dia">Dia</button>
+                    <button type="button" class="period-mode" role="tab" data-period-mode="semana">Semana</button>
+                    <button type="button" class="period-mode" role="tab" data-period-mode="mes">Mês</button>
+                    <button type="button" class="period-mode" role="tab" data-period-mode="intervalo">Intervalo</button>
+                  </div>
+                  <div class="birthday-date-toolbar">
+                    <button type="button" class="birthday-date-nav" data-period-prev aria-label="Mês anterior"><svg class="ic"><use href="#ic-chevron-down"/></svg></button>
+                    <div class="birthday-date-heading">
+                      <button type="button" class="birthday-date-pick" data-period-month-btn aria-haspopup="listbox" aria-expanded="false"><span data-period-month-label>Janeiro</span><svg class="ic"><use href="#ic-chevron-down"/></svg></button>
+                      <button type="button" class="birthday-date-pick" data-period-year-btn aria-haspopup="listbox" aria-expanded="false"><span data-period-year-label>2026</span><svg class="ic"><use href="#ic-chevron-down"/></svg></button>
+                    </div>
+                    <button type="button" class="birthday-date-nav" data-period-next aria-label="Próximo mês"><svg class="ic"><use href="#ic-chevron-down"/></svg></button>
+                  </div>
+                  <div class="birthday-date-body">
+                    <div class="birthday-date-view birthday-date-view-days is-active" data-period-view="days">
+                      <div class="birthday-date-weekdays" data-period-weekdays></div>
+                      <div class="birthday-date-grid" data-period-grid></div>
+                    </div>
+                    <div class="birthday-date-view birthday-date-view-months" data-period-view="months" role="listbox" aria-label="Mês"></div>
+                    <div class="birthday-date-view birthday-date-view-years" data-period-view="years" role="listbox" aria-label="Ano"></div>
+                  </div>
+                  <div class="period-time">
+                    <span class="period-time-title" data-period-time-title>Horário</span>
+                    <div class="period-time-row">
+                      <div class="nx-picker" data-nx-picker="time">
+                        <input type="hidden" value="00:00" data-period-time-start data-presets="00:00,06:00,08:00,12:00" data-minutos="00,05,10,15,20,25,30,35,40,45,50,55,59" aria-label="Início">
+                        <button type="button" class="birthday-date-trigger" data-nx-trigger aria-haspopup="dialog" aria-expanded="false"><svg class="ic birthday-date-icon" aria-hidden="true"><use href="#ic-clock"/></svg><span class="nx-prefixo" data-period-from>Das</span><span class="nx-valor" data-nx-label>00:00</span></button>
+                      </div>
+                      <div class="nx-picker" data-nx-picker="time">
+                        <input type="hidden" value="23:59" data-period-time-end data-presets="12:00,18:00,22:00,23:59" data-minutos="00,05,10,15,20,25,30,35,40,45,50,55,59" aria-label="Fim">
+                        <button type="button" class="birthday-date-trigger" data-nx-trigger aria-haspopup="dialog" aria-expanded="false"><svg class="ic birthday-date-icon" aria-hidden="true"><use href="#ic-clock"/></svg><span class="nx-prefixo" data-period-to>às</span><span class="nx-valor" data-nx-label>23:59</span></button>
+                      </div>
+                    </div>
+                    <small class="period-time-hint" data-period-time-hint>A faixa vale para cada dia do período.</small>
+                    <small class="period-time-error" data-period-time-error role="alert" hidden></small>
+                  </div>
+                  <div class="period-summary" data-period-summary aria-live="polite"></div>
+                  <div class="period-actions">
+                    <button type="button" class="btn-secondary" data-period-reset>Restaurar</button>
+                    <button type="button" class="btn-primary" data-period-apply>Aplicar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID_Relatorio</th>
+                  <th>Tarefa</th>
+                  <th>Origem</th>
+                  <th>Tempo Estimado</th>
+                  <th>Status</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="alerts-card card-anim" style="--delay:4">
+            <div class="alerts-head">
+              <div class="alerts-title"><svg class="ic"><use href="#ic-bell"/></svg> Central de Alertas:</div>
+              <div class="alerts-head-actions">
+                <button type="button" class="alerts-mini-btn" id="alertsOpenCenterBtn" title="Verificar alertas"><svg class="ic"><use href="#ic-check"/></svg><span>Verificar</span></button>
+                <button type="button" class="alerts-mini-btn alerts-mini-btn--accent" id="alertsNewBtn" title="Adicionar novo alerta"><svg class="ic"><use href="#ic-plus"/></svg><span>Novo</span></button>
+              </div>
+            </div>
+            <div id="alertsList"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-perfil">
+        <div class="profile-hero">
+          <div class="profile-hero-glow"></div>
+          <div class="profile-avatar" id="perfilAvatar"><svg class="ic profile-avatar-fallback"><use href="#ic-user-circle"/></svg><img id="perfilFoto" alt="Foto de perfil" hidden></div>
+          <div class="profile-hero-copy"><span class="profile-kicker">ÁREA PESSOAL:</span><h2 class="section-title">Meu perfil</h2><p>Seus dados, sua empresa e a segurança da sua conta em um só lugar.</p></div>
+          <span class="profile-status"><i></i> Conta ativa</span>
+        </div>
+        <div class="profile-photo-card">
+          <div class="profile-photo-copy"><strong>Foto de perfil:</strong><small>Escolha uma imagem para identificar sua conta no Nexus Air.</small></div>
+          <form id="profilePhotoForm" class="profile-photo-form">
+            <label class="profile-photo-picker" for="perfilFotoInput"><span>Selecionar imagem</span><input id="perfilFotoInput" type="file" accept="image/jpeg,image/png,image/webp"></label>
+            <button type="submit" class="btn-primary" id="perfilFotoBtn" disabled>Salvar foto</button>
+          </form>
+          <span id="perfilFotoStatus" role="status"></span>
+        </div>
+        <div class="profile-section-heading"><span>Dados da conta:</span><small>Informações vinculadas ao seu acesso</small></div>
+        <div class="profile-name-card">
+          <div><span class="profile-name-label">Nome de usuário:</span><small>Atualize como seu nome aparece no Nexus Air.</small></div>
+          <form id="profileNameForm"><input id="perfilNomeInput" type="text" minlength="3" maxlength="100" autocomplete="name" required><button type="submit" class="btn-primary" id="perfilNomeBtn">Salvar nome</button></form>
+          <span id="perfilNomeStatus" role="status"></span>
+        </div>
+        <div class="profile-birthday-card profile-birthday-card--standalone">
+          <div class="profile-birthday-copy"><span class="profile-name-label" data-i18n-pt="Data de aniversário:" data-i18n-en="Birthday date:">Data de aniversário:</span><small data-i18n-pt="Usaremos esta data apenas para preparar uma surpresa no seu dia." data-i18n-en="We will use this date only to prepare a surprise on your special day.">Usaremos esta data apenas para preparar uma surpresa no seu dia.</small></div>
+          <form id="profileBirthdayForm" class="profile-birthday-form">
+            <div class="birthday-date-picker" data-birthday-date-picker>
+              <input id="perfilDataNascimentoInput" type="hidden" aria-label="Data de aniversário">
+              <button type="button" class="birthday-date-trigger" data-date-trigger aria-haspopup="dialog" aria-expanded="false" aria-label="Selecionar data">
+                <svg class="ic birthday-date-icon" aria-hidden="true"><use href="#ic-calendar"/></svg><span data-date-label>Selecionar data</span>
+              </button>
+              <div class="birthday-date-popover" data-date-popover role="dialog" aria-label="Selecionar data" hidden>
+                <div class="birthday-date-toolbar">
+                  <button type="button" class="birthday-date-nav" data-date-prev aria-label="Mês anterior"><svg class="ic"><use href="#ic-chevron-down"/></svg></button>
+                  <div class="birthday-date-heading">
+                    <button type="button" class="birthday-date-pick" data-date-month-btn aria-haspopup="listbox" aria-expanded="false"><span data-date-month-label>Janeiro</span><svg class="ic"><use href="#ic-chevron-down"/></svg></button>
+                    <button type="button" class="birthday-date-pick" data-date-year-btn aria-haspopup="listbox" aria-expanded="false"><span data-date-year-label>2026</span><svg class="ic"><use href="#ic-chevron-down"/></svg></button>
+                  </div>
+                  <button type="button" class="birthday-date-nav" data-date-next aria-label="Próximo mês"><svg class="ic"><use href="#ic-chevron-down"/></svg></button>
+                </div>
+                <div class="birthday-date-body" data-date-body>
+                  <div class="birthday-date-view birthday-date-view-days is-active" data-date-view="days">
+                    <div class="birthday-date-weekdays" data-date-weekdays></div>
+                    <div class="birthday-date-grid" data-date-grid></div>
+                  </div>
+                  <div class="birthday-date-view birthday-date-view-months" data-date-view="months" role="listbox" aria-label="Mês"></div>
+                  <div class="birthday-date-view birthday-date-view-years" data-date-view="years" role="listbox" aria-label="Ano"></div>
+                </div>
+                <button type="button" class="birthday-date-clear" data-date-clear>Limpar data</button>
+              </div>
+            </div>
+            <button type="submit" class="btn-primary" id="perfilAniversarioBtn" data-i18n-pt="Salvar data" data-i18n-en="Save date">Salvar data</button>
+          </form>
+          <span id="perfilAniversarioStatus" role="status"></span>
+        </div>
+        <div class="profile-grid">
+          <div class="profile-field"><span><i class="profile-field-icon"><svg class="ic"><use href="#ic-user-circle"/></svg></i>Nome completo:</span><strong id="perfilNome">—</strong></div>
+          <div class="profile-field"><span><i class="profile-field-icon"><svg class="ic"><use href="#ic-mail"/></svg></i>E-mail:</span><strong id="perfilEmail">—</strong></div>
+          <div class="profile-field"><span><i class="profile-field-icon"><svg class="ic"><use href="#ic-badge"/></svg></i>Cargo:</span><strong id="perfilCargo">—</strong></div>
+          <div class="profile-field"><span><i class="profile-field-icon"><svg class="ic"><use href="#ic-users"/></svg></i>Departamento:</span><strong id="perfilDepartamento">—</strong></div>
+          <div class="profile-field"><span><i class="profile-field-icon"><svg class="ic"><use href="#ic-shield"/></svg></i>Tipo de acesso:</span><strong id="perfilAcesso">—</strong></div>
+          <div class="profile-field profile-field-company"><span><i class="profile-field-icon"><svg class="ic"><use href="#ic-building"/></svg></i>Empresa:</span><strong id="perfilEmpresa">—</strong></div>
+        </div>
+        <div class="profile-security-card">
+          <div class="profile-security-head"><div class="profile-security-icon"><svg class="ic"><use href="#ic-shield"/></svg></div><div><h3>Segurança da conta:</h3><p>Redefina sua senha sem sair do Nexus Air.</p></div></div>
+          <form id="profilePasswordForm" class="profile-password-form">
+            <div class="profile-password-fields">
+              <label>Senha atual<input type="password" id="perfilSenhaAtual" autocomplete="current-password" required placeholder="Digite a senha atual"></label>
+              <label>Nova senha<input type="password" id="perfilNovaSenha" autocomplete="new-password" minlength="6" required placeholder="Mínimo de 6 caracteres"></label>
+              <label>Confirmar nova senha<input type="password" id="perfilConfirmarSenha" autocomplete="new-password" minlength="6" required placeholder="Repita a nova senha"></label>
+            </div>
+            <div class="profile-password-actions"><button type="submit" class="btn-primary" id="perfilSenhaBtn">Redefinir senha</button><span id="perfilSenhaStatus" role="status"></span></div>
+          </form>
+        </div>
+        <button type="button" class="btn-secondary profile-back" id="perfilVoltarBtn"><span>Voltar ao dashboard</span><svg class="ic"><use href="#ic-arrow"/></svg></button>
+      </section>
+
+      <section class="view" id="view-usuarios">
+        <div class="table-header-row us-head">
+          <div>
+            <h2 class="section-title" style="margin-bottom:0;">Gerenciamento de Usuários</h2>
+            <p class="us-sub"><span class="us-count" id="usuariosContagem">0</span> <span id="usuariosContagemTxt">usuários cadastrados</span></p>
+          </div>
+          <button class="btn-primary" id="novoUsuarioBtn">+ Novo Usuário</button>
+        </div>
+
+        <div class="table-card card-anim us-card" style="--delay:0;margin-top:14px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Cargo</th>
+                <th>Departamento</th>
+                <th>Acesso</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody id="usuariosTableBody"></tbody>
+          </table>
+          <div id="usuariosVazio" class="table-empty us-vazio" hidden><svg class="ic"><use href="#ic-users"/></svg><strong>Nenhum usuário cadastrado ainda.</strong></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-conectores">
+        <div class="cx-head">
+          <div>
+            <h2 class="section-title" style="margin-bottom:4px;">Conectores de Dados</h2>
+            <p class="cx-sub">Cadastre as máquinas e fontes do sistema. As máquinas são lidas no Zabbix e aparecem no dashboard.</p>
+          </div>
+          <div class="cx-zabbix" id="cxZabbix" data-estado="carregando"><i></i><span>Verificando Zabbix…</span></div>
+        </div>
+
+        <div class="cx-layout">
+          <div class="cx-main">
+            <div class="table-card cx-panel">
+              <div class="cx-panel-head">
+                <h3>Máquinas e fontes cadastradas</h3>
+                <span class="cx-count" id="cxContagem">0</span>
+              </div>
+              <div class="cx-filtros" id="cxFiltros" role="group" aria-label="Filtrar por tipo">
+                <button type="button" class="cx-chip is-ativo" data-cx-filtro="todos">Todos <b>0</b></button>
+                <button type="button" class="cx-chip" data-cx-filtro="servidores">Servidores <b>0</b></button>
+                <button type="button" class="cx-chip" data-cx-filtro="bancos">Bancos <b>0</b></button>
+                <button type="button" class="cx-chip" data-cx-filtro="fontes">Fontes <b>0</b></button>
+              </div>
+              <div class="cx-grid" id="cxGrid" role="listbox" aria-label="Máquinas e fontes cadastradas"></div>
+              <div class="cx-vazio" id="cxVazio" hidden>
+                <svg class="ic"><use href="#ic-server"/></svg>
+                <strong>Nenhuma máquina cadastrada</strong>
+                <span>Use o formulário ao lado para adicionar a primeira.</span>
+              </div>
+            </div>
+
+            <div class="table-card cx-detalhe">
+            <div class="cx-selecionado" id="cxSelecionado"></div>
+            <div class="cx-acoes">
+              <button type="button" class="cx-btn cx-btn--conectar" id="cxConectar" disabled><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V3M15 7V3M7 7h10v4a5 5 0 0 1-10 0V7ZM12 16v5"/></svg><span>Conectar</span></button>
+              <button type="button" class="cx-btn cx-btn--validar" id="cxValidar" disabled><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.4 2.4 4.2-4.6"/></svg><span>Validar</span></button>
+              <button type="button" class="cx-btn cx-btn--excluir" id="cxExcluir" disabled><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></svg><span>Excluir</span></button>
+              <button type="button" class="cx-btn cx-btn--ghost" id="cxVerDash" disabled><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="9" rx="2"/><rect x="13.5" y="3" width="7.5" height="5.5" rx="2"/><rect x="13.5" y="12" width="7.5" height="9" rx="2"/><rect x="3" y="15.5" width="7.5" height="5.5" rx="2"/></svg><span>Dashboard</span></button>
+            </div>
+            </div>
+            <div class="cx-toasts" id="cxToasts" role="status" aria-live="polite"></div>
+          </div>
+
+          <form class="table-card cx-form" id="cxForm" autocomplete="off">
+            <h3>Adicionar</h3>
+            <label class="cx-campo"><span>Tipo</span>
+              <select name="tipo" id="cxTipo">
+                <optgroup label="Monitorado pelo Zabbix">
+                  <option value="linux" data-icon="linux" data-desc="CPU, memória e uptime em tempo real">Servidor Linux</option>
+                  <option value="windows" data-icon="windows" data-desc="Hosts Windows do seu Zabbix">Servidor Windows</option>
+                  <option value="banco" data-icon="banco" data-desc="Oracle, MySQL, PostgreSQL e outros">Banco de dados</option>
+                  <option value="outro" data-icon="outro" data-desc="Qualquer outro host monitorado">Outro host</option>
+                </optgroup>
+                <optgroup label="Fonte de dados">
+                  <option value="api" data-icon="api" data-desc="Endpoint HTTP com resposta JSON">API</option>
+                  <option value="sql" data-icon="sql" data-desc="Consulta direta em um banco SQL">SQL</option>
+                  <option value="planilha" data-icon="planilha" data-desc="Arquivo CSV ou Excel">Planilha</option>
+                </optgroup>
+              </select>
+            </label>
+            <label class="cx-campo"><span>Nome</span><input name="nome" id="cxNome" placeholder="Ex.: Oracle Linux VM 01" maxlength="80" required></label>
+            <label class="cx-campo"><span id="cxRotuloEndereco">IP ou endereço</span><input name="endereco" id="cxEndereco" placeholder="Ex.: 10.0.0.15" maxlength="150"></label>
+            <label class="cx-campo" data-so="maquina"><span>Host no Zabbix</span>
+              <div class="cx-sel cx-combo is-livre" id="cxHostCombo">
+                <input name="host_zabbix" id="cxHost" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cxHostsLista" placeholder="Nome do host cadastrado no Zabbix" maxlength="150">
+                <svg class="cx-combo-seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                <ul class="cx-sel-lista" id="cxHostsLista" role="listbox" hidden></ul>
+              </div>
+              <small class="cx-dica" id="cxHostDica">Se deixar vazio, procuramos pelo IP.</small>
+            </label>
+            <label class="cx-campo" data-so="banco" hidden><span>Instância / SID</span><input name="instancia" id="cxInstancia" placeholder="Ex.: ORCL" maxlength="30" autocapitalize="characters"><small class="cx-dica">Usada nos relatórios agendados do Oracle.</small></label>
+            <label class="cx-campo" data-so="sql" hidden><span>Banco/schema</span><input name="banco" placeholder="Nome do banco"></label>
+            <label class="cx-campo" data-so="fonte" hidden><span>Autenticação</span>
+              <select name="autenticacao"><option value="nenhuma">Sem autenticação</option><option value="token">Token</option><option value="basic">Usuário e senha</option></select>
+            </label>
+            <label class="cx-campo" data-so="fonte" hidden><span>Token</span><input name="token" type="password" placeholder="Opcional" autocomplete="new-password"></label>
+            <label class="cx-campo" data-so="maquina"><span>Descrição</span><input name="descricao" placeholder="Opcional" maxlength="300"></label>
+            <button class="cx-add" type="submit" id="cxAdicionar"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Adicionar</span></button>
+          </form>
+        </div>
+
+        <div class="table-card automation-validator cx-validador">
+          <div class="cx-valid-head">
+            <span class="cx-valid-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12 2.4 2.4 4.2-4.6"/></svg></span>
+            <div><h3>Validador de entrada</h3><p>Valide um JSON antes de processar: campos obrigatórios, intervalos e duplicidade.</p></div>
+          </div>
+          <div class="cx-valid-corpo">
+            <textarea id="dadosValidacao" rows="5" spellcheck="false" placeholder='[{"id":1,"valor":10}]'></textarea>
+            <div class="cx-valid-lado">
+              <input id="camposObrigatorios" placeholder="Campos obrigatórios, separados por vírgula">
+              <button class="btn-primary" id="validarDadosBtn">Validar dados</button>
+              <div class="automation-feedback" id="validacaoFeedback"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="pdf-modal" id="pdfModal" hidden role="dialog" aria-modal="true" aria-label="Visualização do PDF">
+    <div class="pdf-modal-box">
+      <div class="pdf-modal-bar"><strong id="pdfModalTitulo">Visualização do PDF</strong><a class="btn-primary" id="pdfModalBaixar" download><svg class="ic"><use href="#ic-download"/></svg><span>Baixar PDF</span></a><button class="fx-icbtn" type="button" id="pdfModalFechar" aria-label="Fechar"><svg class="ic"><use href="#ic-x"/></svg></button></div>
+      <iframe id="pdfModalFrame" title="PDF"></iframe>
+    </div>
+  </div>
+      <section class="view" id="view-orquestrador">
+        <header class="fx-hero">
+          <span class="fx-hero-ico" aria-hidden="true"><svg class="ic"><use href="#ic-workflow"/></svg></span>
+          <div class="fx-hero-txt">
+            <h2 class="section-title">Orquestrador de Fluxos</h2>
+            <p>Crie fluxos sobre os seus conectores, execute quando quiser e agende os relatórios do Oracle para chegarem por e-mail.</p>
+          </div>
+          <div class="fx-hero-acao">
+            <div class="fx-hero-sel" aria-live="polite">
+              <small>Fluxo selecionado</small>
+              <strong id="fxHeroSel">Nenhum fluxo</strong>
+            </div>
+            <button class="btn-primary fx-run" id="fluxoExecutarBtn" type="button"><svg class="ic"><use href="#ic-play"/></svg><span>Executar selecionado</span></button>
+          </div>
+        </header>
+
+        <div class="fx-tabs" role="tablist" aria-label="Seções do orquestrador">
+          <button type="button" class="fx-tab is-active" role="tab" id="fxTabFluxos" aria-selected="true" aria-controls="fxPainelFluxos" data-fx-tab="fluxos"><svg class="ic"><use href="#ic-workflow"/></svg><span>Fluxos</span><b id="fxStatTotal">0</b></button>
+          <button type="button" class="fx-tab" role="tab" id="fxTabAgend" aria-selected="false" aria-controls="fxPainelAgend" data-fx-tab="agendados" tabindex="-1"><svg class="ic"><use href="#ic-mail"/></svg><span class="fx-tab-full">Relatórios por e-mail</span><span class="fx-tab-curto">E-mail</span><b id="fxStatAg">0</b></button>
+        </div>
+
+        <div class="fx-painel" id="fxPainelFluxos" role="tabpanel" aria-labelledby="fxTabFluxos">
+          <div class="fx-grid">
+            <form class="table-card automation-form fx-card" id="fluxoForm">
+              <div class="fx-card-head"><span class="fx-card-ico"><svg class="ic"><use href="#ic-sparkle"/></svg></span><div><h3>Novo fluxo</h3><p>Defina a origem, as regras e a frequência.</p></div></div>
+
+              <label class="fx-label" for="fluxoNome"><span class="fx-step">1</span>Nome do fluxo</label>
+              <input name="nome" id="fluxoNome" placeholder="Ex.: Fechamento diário de vendas" required>
+
+              <label class="fx-label" for="fluxoConector"><span class="fx-step">2</span>Conector de origem</label>
+              <select name="conector_id" id="fluxoConector" aria-label="Conector de origem" required><option value="">Selecione o conector</option></select>
+
+              <label class="fx-label" for="fluxoRegras"><span class="fx-step">3</span>Regras de transformação <em>opcional</em></label>
+              <textarea name="regras" id="fluxoRegras" rows="4" spellcheck="false" placeholder='[{"campo":"valor","operacao":"multiplicar","valor":2}]'></textarea>
+              <div class="fx-exemplos" aria-label="Inserir exemplo de regra">
+                <button type="button" data-fx-exemplo='[{"campo":"valor","operacao":"multiplicar","valor":2}]'>Multiplicar</button>
+                <button type="button" data-fx-exemplo='[{"campo":"status","operacao":"igual","valor":"falho"}]'>Filtrar status</button>
+                <button type="button" data-fx-exemplo='[]'>Limpar</button>
+              </div>
+
+              <span class="fx-label"><span class="fx-step">4</span>Frequência</span>
+              <div class="fx-seg" role="radiogroup" aria-label="Frequência">
+                <label><input type="radio" name="frequencia" value="manual" checked><span>Manual</span></label>
+                <label><input type="radio" name="frequencia" value="diaria"><span>Diária</span></label>
+                <label><input type="radio" name="frequencia" value="semanal"><span>Semanal</span></label>
+                <label><input type="radio" name="frequencia" value="mensal"><span>Mensal</span></label>
+              </div>
+
+              <button class="btn-primary fx-save" type="submit"><svg class="ic"><use href="#ic-check"/></svg><span>Salvar fluxo</span></button>
+              <div class="automation-feedback" id="fluxoFeedback" role="status"></div>
+            </form>
+
+            <div class="table-card fx-card fx-lista-card">
+              <div class="fx-card-head"><span class="fx-card-ico"><svg class="ic"><use href="#ic-workflow"/></svg></span><div><h3>Fluxos configurados</h3><p>Clique em um fluxo para selecioná-lo.</p></div></div>
+              <div class="fx-lista" id="fluxosBody" role="listbox" aria-label="Fluxos configurados"></div>
+              <div id="fluxosVazio" class="fx-vazio" hidden>
+                <span class="fx-vazio-ico"><svg class="ic"><use href="#ic-workflow"/></svg></span>
+                <strong>Nenhum fluxo cadastrado</strong>
+                <span>Preencha o formulário ao lado para criar o primeiro.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fx-painel" id="fxPainelAgend" role="tabpanel" aria-labelledby="fxTabAgend" hidden>
+          <p class="ag-lead">Escolha o banco, informe o usuário administrador e defina quando o relatório do Oracle deve ser gerado em PDF e enviado por Gmail: agora, ou em uma data e horário, uma vez ou repetindo.</p>
+          <div class="ag-stack">
+            <form class="table-card automation-form fx-card ag-form" id="agForm" novalidate autocomplete="off">
+              <div class="fx-card-head"><span class="fx-card-ico"><svg class="ic"><use href="#ic-calendar"/></svg></span><div><h3>Novo agendamento</h3><p>O PDF é gerado e enviado automaticamente.</p></div></div>
+              <div class="ag-cols">
+                <div class="ag-col">
+                  <section class="ag-bloco" aria-labelledby="agTitBanco">
+                    <h4 class="ag-bloco-tit" id="agTitBanco"><span class="ag-bloco-ico"><svg class="ic"><use href="#ic-database"/></svg></span>Banco de dados</h4>
+
+                    <label class="ag-rotulo" for="agNome">Nome do agendamento</label>
+                    <input name="nome" id="agNome" placeholder="Ex.: Diário - produção" maxlength="100" required>
+
+                    <label class="ag-rotulo" for="agInstancia">Banco</label>
+                    <select name="maquina_id" id="agInstancia" aria-label="Banco de dados" required>
+                      <option value="">Selecione o banco</option>
+                    </select>
+                    <div class="ag-aviso-banco" id="agBancoVazio" hidden>
+                      <strong>Nenhum banco cadastrado.</strong>
+                      <span>Cadastre um item do tipo <em>Banco de dados</em> em Conectores de Dados e ele aparece aqui.</span>
+                      <button type="button" class="btn-secondary" id="agIrConectores">Ir para Conectores de Dados</button>
+                    </div>
+                    <div class="ag-sid" id="agSidBox" hidden>
+                      <label class="ag-rotulo" for="agSid">Instância / SID</label>
+                      <input id="agSid" placeholder="Ex.: ORCL" maxlength="30" autocapitalize="characters" autocomplete="off">
+                      <small class="ag-dica">Este banco ainda não tem SID. Informe agora: ele fica salvo em Conectores de Dados.</small>
+                    </div>
+
+                    <div class="ag-duas">
+                      <div>
+                        <label class="ag-rotulo" for="agUsuario">Usuário administrador</label>
+                        <input name="usuario_banco" id="agUsuario" placeholder="Usuário" maxlength="30" autocomplete="off" autocapitalize="off" spellcheck="false" required>
+                      </div>
+                      <div>
+                        <label class="ag-rotulo" for="agSenha">Senha</label>
+                        <input name="senha_banco" id="agSenha" type="password" placeholder="Senha" maxlength="128" autocomplete="new-password" required>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="ag-bloco" aria-labelledby="agTitDestino">
+                    <h4 class="ag-bloco-tit" id="agTitDestino"><span class="ag-bloco-ico"><svg class="ic"><use href="#ic-mail"/></svg></span>Destino e conteúdo</h4>
+
+                    <label class="ag-rotulo" for="agDest">E-mails de destino</label>
+                    <input name="destinatarios" id="agDest" type="text" placeholder="ti@empresa.com, gestor@empresa.com" required>
+                    <small class="ag-dica">Separe vários endereços por vírgula.</small>
+
+                    <details>
+                      <summary>Conteúdo do relatório</summary>
+                      <div class="ag-secoes" id="agSecoes"></div>
+                    </details>
+                    <details>
+                      <summary>Personalizar e-mail <em>opcional</em></summary>
+                      <label class="ag-rotulo" for="agAssunto">Assunto</label>
+                      <input name="assunto" id="agAssunto" placeholder="Pode usar {instancia}, {cliente} e {data}" maxlength="150">
+                      <label class="ag-rotulo" for="agMensagem">Mensagem</label>
+                      <textarea name="mensagem" id="agMensagem" rows="3" maxlength="1000" placeholder="Se ficar vazia, vai o texto padrão do relatório."></textarea>
+                    </details>
+                  </section>
+                </div>
+
+                <div class="ag-col">
+                  <section class="ag-bloco ag-bloco--quando" aria-labelledby="agTitQuando">
+                    <h4 class="ag-bloco-tit" id="agTitQuando"><span class="ag-bloco-ico"><svg class="ic"><use href="#ic-clock"/></svg></span>Quando enviar</h4>
+                    <div class="ag-modo" role="radiogroup" aria-label="Quando executar">
+                      <label class="ag-chip"><input type="radio" name="modo" value="agendar" checked><span>Em data e horário</span></label>
+                      <label class="ag-chip"><input type="radio" name="modo" value="agora"><span>Executar agora</span></label>
+                    </div>
+
+                    <div class="ag-campo" data-modo="agendar">
+                      <div class="ag-duas ag-duas--quando">
+                        <div>
+                          <span class="ag-rotulo" id="agRotData">Data</span>
+                          <div class="nx-picker" data-nx-picker="date">
+                            <input type="hidden" name="data_inicio" aria-label="Data">
+                            <button type="button" class="birthday-date-trigger" data-nx-trigger aria-haspopup="dialog" aria-expanded="false" aria-labelledby="agRotData"><svg class="ic birthday-date-icon" aria-hidden="true"><use href="#ic-calendar"/></svg><span data-nx-label>Selecionar data</span></button>
+                          </div>
+                        </div>
+                        <div>
+                          <span class="ag-rotulo" id="agRotHora">Horário</span>
+                          <div class="nx-picker" data-nx-picker="time">
+                            <input type="hidden" name="hora" value="07:00" aria-label="Horário">
+                            <button type="button" class="birthday-date-trigger" data-nx-trigger aria-haspopup="dialog" aria-expanded="false" aria-labelledby="agRotHora"><svg class="ic birthday-date-icon" aria-hidden="true"><use href="#ic-clock"/></svg><span data-nx-label>Selecionar horário</span></button>
+                          </div>
+                        </div>
+                      </div>
+                      <label class="ag-check ag-uma-vez"><input type="checkbox" name="so_uma_vez" checked><span>Só uma vez</span></label>
+
+                      <div class="ag-campo ag-repetir" id="agRepetir" hidden>
+                        <label class="ag-rotulo" for="agFrequencia">Repetir</label>
+                        <select name="frequencia" id="agFrequencia" aria-label="Repetir">
+                          <option value="diaria">Todos os dias</option>
+                          <option value="semanal">Toda semana</option>
+                          <option value="intervalo">A cada N dias</option>
+                          <option value="mensal">Todo mês</option>
+                        </select>
+                        <div class="ag-campo" data-freq="semanal" hidden>
+                          <span class="ag-rotulo">Dias da semana</span>
+                          <div class="ag-dias">
+                            <label class="ag-chip"><input type="checkbox" name="dias_semana" value="0"><span>Seg</span></label>
+                            <label class="ag-chip"><input type="checkbox" name="dias_semana" value="1"><span>Ter</span></label>
+                            <label class="ag-chip"><input type="checkbox" name="dias_semana" value="2"><span>Qua</span></label>
+                            <label class="ag-chip"><input type="checkbox" name="dias_semana" value="3"><span>Qui</span></label>
+                            <label class="ag-chip"><input type="checkbox" name="dias_semana" value="4"><span>Sex</span></label>
+                            <label class="ag-chip"><input type="checkbox" name="dias_semana" value="5"><span>Sáb</span></label>
+                            <label class="ag-chip"><input type="checkbox" name="dias_semana" value="6"><span>Dom</span></label>
+                          </div>
+                        </div>
+                        <div class="ag-campo ag-inline" data-freq="intervalo" hidden>
+                          <span>A cada</span><input name="intervalo_dias" type="number" min="1" max="365" value="3" aria-label="Intervalo em dias"><span>dias, a partir da data acima</span>
+                        </div>
+                        <div class="ag-campo" data-freq="mensal" hidden>
+                          <div class="ag-inline"><span>No dia</span><input name="dia_mes" type="number" min="1" max="31" value="1" aria-label="Dia do mês"><span>de cada mês</span></div>
+                          <p class="ag-dica">Em meses mais curtos, o envio acontece no último dia do mês.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="ag-previa is-aviso" id="agPrevia" aria-live="polite"></div>
+                  </section>
+
+                  <button class="btn-primary fx-save" type="submit" id="agEnviar">Agendar relatório</button>
+                  <div class="automation-feedback" id="agFeedback" role="status"></div>
+                </div>
+              </div>
+            </form>
+
+            <div class="table-card fx-card">
+              <div class="fx-card-head"><span class="fx-card-ico"><svg class="ic"><use href="#ic-file-text"/></svg></span><div><h3>Agendamentos</h3><p>Relatórios em PDF programados para envio.</p></div></div>
+              <div class="fx-tabela-wrap">
+                <table class="ag-tabela">
+                  <thead><tr><th>Relatório</th><th>Frequência</th><th>Próximo envio</th><th>Último envio</th><th>Ação</th></tr></thead>
+                  <tbody id="agBody"></tbody>
+                </table>
+              </div>
+              <div id="agVazio" class="fx-vazio" hidden>
+                <span class="fx-vazio-ico"><svg class="ic"><use href="#ic-mail"/></svg></span>
+                <strong>Nenhum relatório agendado</strong>
+                <span>Preencha o formulário acima para criar o primeiro.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-relatorios">
+        <div class="table-header-row">
+          <h2 class="section-title" style="margin-bottom:0;">Relatório de Resolução de Suporte</h2>
+          <div class="relatorio-filtro">
+            <input type="number" id="relatorioIdSuporte" placeholder="ID do agente de suporte" min="1">
+            <button class="btn-primary" id="relatorioFiltrarBtn">Filtrar</button>
+            <button class="action-icon" id="relatorioLimparBtn" title="Limpar filtro"><svg class="ic"><use href="#ic-x"/></svg></button>
+          </div>
+        </div>
+
+        <div class="table-card automation-report-tools pdf-studio">
+          <div class="pdf-head">
+            <div class="fx-card-head"><span class="fx-card-ico"><svg class="ic"><use href="#ic-file-text"/></svg></span><div><h3>Editor e visualização de relatórios</h3><p>Monte o modelo, filtre os registros e baixe em PDF.</p></div></div>
+            <div class="pdf-acoes"><button class="btn-secondary" id="relatorioPreviewBtn" type="button"><svg class="ic"><use href="#ic-eye"/></svg><span>Visualização prévia</span></button><button class="btn-primary" id="relatorioPdfBtn" type="button"><svg class="ic"><use href="#ic-download"/></svg><span>Gerar PDF</span></button></div>
+          </div>
+          <div class="pdf-corpo">
+            <div class="pdf-controles automation-report-grid">
+              <span class="fx-label pdf-sec">Modelo</span>
+              <label class="pdf-campo"><small>Nome do template</small><input id="templateNome" placeholder="Ex.: Resolução de suporte"></label>
+              <label class="pdf-campo"><small>Conteúdo</small><textarea id="templateConteudo" rows="4" placeholder="Use {{dados}} para inserir os dados."></textarea></label>
+              <span class="fx-label pdf-sec">Filtros</span>
+              <label class="pdf-campo"><small>Palavra-chave</small><input id="relatorioBusca" placeholder="Buscar nos registros"></label>
+              <div class="pdf-duas">
+                <label class="pdf-campo"><small>Categoria</small><input id="relatorioCategoria" placeholder="Categoria"></label>
+                <label class="pdf-campo"><small>Status</small><select id="relatorioStatus" aria-label="Status"><option value="">Todos os status</option><option>sucesso</option><option>falho</option><option>concluído</option></select></label>
+              </div>
+            </div>
+            <div class="pdf-previa">
+              <div class="pdf-previa-bar"><span class="pdf-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Prévia do documento</span><span class="pdf-tag">PDF · A4</span></div>
+              <div class="pdf-folha">
+                <iframe class="pdf-frame" id="relatorioPdfFrame" title="Prévia do PDF" hidden></iframe>
+                <div class="pdf-vazio report-preview is-vazio" id="relatorioPreview"><svg class="ic"><use href="#ic-file-text"/></svg><strong>Modelo padrão Nexus</strong><span>Clique em "Visualização prévia" para ver o PDF com capa, resumo e seções.</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="automation-feedback" id="relatorioFeedback" role="status"></div>
+        </div>
+
+        <div class="table-card card-anim" style="--delay:0;margin-top:14px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Empresa</th>
+                <th>Tipo de Alerta</th>
+                <th>Resolução</th>
+                <th>Máquina Afetada</th>
+                <th>Agente de Suporte</th>
+                <th>Departamento</th>
+                <th>Data/Hora</th>
+              </tr>
+            </thead>
+            <tbody id="relatorioTableBody"></tbody>
+          </table>
+          <div id="relatorioVazio" class="table-empty" hidden>Nenhum registro de suporte encontrado.</div>
+        </div>
+      </section>
+
+      <!-- ===================== DISTRIBUIÇÃO E SEGURANÇA ===================== -->
+      <section class="view" id="view-seguranca">
+        <div class="dg-head">
+          <div>
+            <h2 class="section-title" style="margin-bottom:4px;">Distribuição e Segurança</h2>
+            <p class="dg-sub">Garanta que cada relatório chegue ao destino certo, com histórico completo e acesso externo sob controle.</p>
+          </div>
+          <div class="dg-head-actions">
+            <button type="button" class="dg-btn dg-btn--ghost" id="dgBtnConfig"><svg class="dg-ic"><use href="#ic-mail"/></svg><span>Configuração de e-mails</span></button>
+            <button type="button" class="dg-btn dg-btn--ghost" id="dgBtnLink"><svg class="dg-ic"><use href="#ic-link"/></svg><span>Gerar link</span></button>
+            <button type="button" class="dg-btn dg-btn--primary" id="dgBtnEnviar"><svg class="dg-ic"><use href="#dg-send"/></svg><span>Enviar relatório</span></button>
+          </div>
+        </div>
+
+        <div class="dg-kpis" id="dgKpis"></div>
+
+        <div class="dg-layout">
+          <aside class="table-card dg-panel dg-listas">
+            <div class="dg-panel-head">
+              <div class="dg-title"><span class="dg-title-ico"><svg class="dg-ic"><use href="#ic-users"/></svg></span><div><h3>Lista de contatos</h3><p>Quem recebe os relatórios</p></div></div>
+              <button type="button" class="dg-icon-btn" id="dgNovaLista" title="Nova lista" aria-label="Nova lista"><svg class="dg-ic"><use href="#ic-plus"/></svg></button>
+            </div>
+            <div class="dg-list" id="dgListas" role="listbox" aria-label="Listas de contatos"></div>
+            <form class="dg-add" id="dgAddEmail" autocomplete="off">
+              <input type="email" id="dgAddEmailInput" placeholder="Adicionar e-mail à lista" aria-label="Adicionar e-mail à lista" required>
+              <button type="submit" class="dg-icon-btn dg-icon-btn--solid" title="Adicionar" aria-label="Adicionar e-mail"><svg class="dg-ic"><use href="#ic-plus"/></svg></button>
+            </form>
+            <div class="dg-contatos" id="dgContatos"></div>
+          </aside>
+
+          <div class="dg-col">
+            <div class="table-card dg-panel dg-hist">
+              <div class="dg-panel-head">
+                <div class="dg-title"><span class="dg-title-ico"><svg class="dg-ic"><use href="#dg-history"/></svg></span><div><h3>Histórico de envios</h3><p>Data, hora, destinatário e status de cada envio</p></div></div>
+                <label class="dg-search"><svg class="dg-ic"><use href="#ic-search"/></svg><input type="search" id="dgBusca" placeholder="Buscar ID ou destinatário" aria-label="Buscar envio"></label>
+              </div>
+              <div class="dg-chips" id="dgFiltros" role="group" aria-label="Filtrar por status">
+                <button type="button" class="dg-chip is-ativo" data-dg-filtro="todos">Todos <b>0</b></button>
+                <button type="button" class="dg-chip" data-dg-filtro="enviado">Enviados <b>0</b></button>
+                <button type="button" class="dg-chip" data-dg-filtro="fila">Na fila <b>0</b></button>
+                <button type="button" class="dg-chip" data-dg-filtro="erro">Com erro <b>0</b></button>
+              </div>
+              <div class="dg-table-wrap">
+                <table class="dg-table">
+                  <thead><tr><th>ID do relatório</th><th>Data e hora</th><th>Destinatário</th><th>Status</th><th class="dg-th-acao">Ação</th></tr></thead>
+                  <tbody id="dgEnviosBody"></tbody>
+                </table>
+              </div>
+              <div class="dg-vazio" id="dgEnviosVazio" hidden><svg class="dg-ic"><use href="#dg-inbox"/></svg><strong>Nenhum envio encontrado</strong><span>Ajuste o filtro ou envie um novo relatório.</span></div>
+            </div>
+
+            <div class="table-card dg-panel dg-acesso">
+              <div class="dg-panel-head">
+                <div class="dg-title"><span class="dg-title-ico"><svg class="dg-ic"><use href="#dg-key"/></svg></span><div><h3>Controle de acesso</h3><p>Links compartilháveis com acesso seguro</p></div></div>
+                <span class="dg-count" id="dgLinksCount">0</span>
+              </div>
+              <div class="dg-links" id="dgLinks"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SISTEMA E GOVERNANÇA ===================== -->
+      <section class="view" id="view-sistema">
+        <div class="dg-head">
+          <div>
+            <h2 class="section-title" style="margin-bottom:4px;">Sistema e Governança</h2>
+            <p class="dg-sub">Controle quem acessa, o que mudou e como os dados são protegidos e recuperados.</p>
+          </div>
+          <div class="dg-clock" aria-label="Data e hora atuais"><span><svg class="dg-ic"><use href="#ic-calendar"/></svg><b id="dgRelData">--/--/----</b></span><span><svg class="dg-ic"><use href="#ic-clock"/></svg><b id="dgRelHora">--:--:--</b></span></div>
+        </div>
+
+        <div class="table-card dg-panel dg-web">
+          <div class="dg-panel-head">
+            <div class="dg-title"><span class="dg-title-ico"><svg class="dg-ic"><use href="#ic-globe"/></svg></span><div><h3>Acesso web</h3><p>Login, navegação e operações principais direto pelo navegador</p></div></div>
+            <span class="dg-pill dg-pill--ok" id="dgWebStatus"><i></i>Ativo</span>
+          </div>
+          <div class="dg-web-grid">
+            <label class="dg-campo"><span>Endereço de acesso</span>
+              <div class="dg-input-ico"><svg class="dg-ic"><use href="#ic-globe"/></svg><input type="text" id="dgWebUrl" placeholder="https://nexus.suaempresa.com.br" autocomplete="off"></div>
+            </label>
+            <label class="dg-campo"><span>Sessão expira após</span>
+              <select id="dgSessao"><option value="15">15 minutos</option><option value="30">30 minutos</option><option value="60">1 hora</option><option value="240">4 horas</option><option value="480">8 horas</option></select>
+            </label>
+            <div class="dg-switch-row">
+              <button type="button" class="dg-switch" id="dgExigirWeb" role="switch" aria-checked="false" aria-label="Exigir navegador web"><i></i></button>
+              <div><strong>Exigir navegador web</strong><small>Bloqueia acessos que não venham de um navegador</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dg-duo">
+          <div class="table-card dg-panel dg-usuarios">
+            <div class="dg-panel-head">
+              <div class="dg-title"><span class="dg-title-ico"><svg class="dg-ic"><use href="#ic-users"/></svg></span><div><h3>Gestão de usuários e permissões</h3><p>Nível de acesso e status de cada conta</p></div></div>
+              <span class="dg-count" id="dgUsuariosCount">0</span>
+            </div>
+            <div class="dg-bulk" id="dgBulk" hidden>
+              <span><b id="dgBulkN">0</b> selecionado(s)</span>
+              <select id="dgBulkNivel" aria-label="Nível para aplicar"><option value="admin">Administrador</option><option value="padrao">Usuário comum</option></select>
+              <button type="button" class="dg-btn dg-btn--sm dg-btn--primary" id="dgBulkAplicar">Aplicar nível</button>
+            </div>
+            <div class="dg-table-wrap">
+              <table class="dg-table dg-table--users">
+                <thead><tr><th class="dg-th-chk"><label class="dg-check"><input type="checkbox" id="dgUsersAll" aria-label="Selecionar todos"><i></i></label></th><th>Perfil</th><th>Nível de acesso</th><th>Status</th></tr></thead>
+                <tbody id="dgUsuariosBody"></tbody>
+              </table>
+            </div>
+            <div class="dg-vazio" id="dgUsuariosVazio" hidden><svg class="dg-ic"><use href="#ic-users"/></svg><strong>Nenhum usuário para exibir</strong><span id="dgUsuariosVazioTxt">Cadastre usuários na tela Usuários.</span></div>
+          </div>
+
+          <div class="table-card dg-panel dg-log">
+            <div class="dg-panel-head">
+              <div class="dg-title"><span class="dg-title-ico"><svg class="dg-ic"><use href="#dg-history"/></svg></span><div><h3>Histórico de alterações</h3><p>Tudo que foi mudado, por quem e quando</p></div></div>
+            </div>
+            <div class="dg-timeline" id="dgLogLista"></div>
+            <div class="dg-vazio" id="dgLogVazio" hidden><svg class="dg-ic"><use href="#dg-history"/></svg><strong>Sem alterações registradas</strong><span>As mudanças feitas aqui aparecem nesta linha do tempo.</span></div>
+          </div>
+        </div>
+
+        <div class="table-card dg-panel dg-seg">
+          <div class="dg-panel-head">
+            <div class="dg-title"><span class="dg-title-ico"><svg class="dg-ic"><use href="#ic-shield"/></svg></span><div><h3>Segurança e dados</h3><p>Versionamento, backups automáticos e recuperação</p></div></div>
+          </div>
+          <div class="dg-seg-grid">
+            <div class="dg-box">
+              <div class="dg-box-head">
+                <div><strong>Versionamento</strong><small>Guarda versões das configurações para voltar atrás</small></div>
+                <button type="button" class="dg-switch" id="dgVersionar" role="switch" aria-checked="false" aria-label="Ativar versionamento"><i></i></button>
+              </div>
+              <div class="dg-versoes" id="dgVersoes"></div>
+              <button type="button" class="dg-btn dg-btn--ghost dg-btn--sm" id="dgNovaVersao"><svg class="dg-ic"><use href="#dg-layers"/></svg><span>Criar versão agora</span></button>
+            </div>
+            <div class="dg-box">
+              <div class="dg-box-head">
+                <div><strong>Backup e recuperação</strong><small>Cópias automáticas periódicas dos dados do sistema</small></div>
+                <span class="dg-pill" id="dgBackupStatus"><i></i>Desligado</span>
+              </div>
+              <div class="dg-backup-grid">
+                <label class="dg-campo"><span>Frequência</span><select id="dgBkFreq"><option value="diario">Diário</option><option value="semanal">Semanal</option><option value="mensal">Mensal</option></select></label>
+                <div class="dg-campo"><span id="dgBkHoraRot">Horário</span>
+                  <div class="nx-picker" data-nx-picker="time">
+                    <input type="hidden" id="dgBkHora" value="02:00" data-presets="00:00,02:00,06:00,22:00" aria-label="Horário">
+                    <button type="button" class="birthday-date-trigger" data-nx-trigger aria-haspopup="dialog" aria-expanded="false" aria-labelledby="dgBkHoraRot"><svg class="ic birthday-date-icon" aria-hidden="true"><use href="#ic-clock"/></svg><span data-nx-label>02:00</span></button>
+                  </div></div>
+              </div>
+              <div class="dg-bk-info" id="dgBkInfo"></div>
+              <div class="dg-bk-actions">
+                <button type="button" class="dg-btn dg-btn--ok" id="dgBkAgendar"><svg class="dg-ic"><use href="#ic-calendar"/></svg><span>Agendar</span></button>
+                <button type="button" class="dg-btn dg-btn--ghost" id="dgBkAgora"><svg class="dg-ic"><use href="#dg-cloud"/></svg><span>Fazer backup agora</span></button>
+              </div>
+              <div class="dg-versoes" id="dgBackups"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dg-footer">
+          <button type="button" class="dg-btn dg-btn--ok dg-btn--lg" id="dgContinuar"><svg class="dg-ic"><use href="#ic-check"/></svg><span>Salvar e continuar</span></button>
+          <button type="button" class="dg-btn dg-btn--primary dg-btn--lg" id="dgRelGov"><svg class="dg-ic"><use href="#ic-file-text"/></svg><span>Gerar relatório de governança</span></button>
+        </div>
+      </section>
+
+
+      <section class="view" id="view-config">
+        <h2 class="section-title">Configurações</h2>
+
+        <div class="settings-card card-anim settings-card-language" style="--delay:0">
+          <div class="settings-row">
+            <div class="settings-row-icon"><svg class="ic language-setting-icon" aria-hidden="true"><use href="#ic-globe"/></svg></div>
+            <div class="settings-row-text"><div class="settings-row-title" data-i18n="settings.language.title">Idioma</div><div class="settings-row-desc" data-i18n="settings.language.desc">Escolha o idioma usado na sua conta Nexus Air.</div></div>
+            <div class="language-wrapper">
+              <button class="language-btn" id="languageBtn" type="button" aria-label="Escolher idioma" aria-expanded="false"><svg class="ic language-globe" aria-hidden="true"><use href="#ic-globe"/></svg><span id="languageCode">PT</span><svg class="ic language-chevron" aria-hidden="true"><use href="#ic-chevron-down"/></svg></button>
+              <div class="language-dropdown" id="languageDropdown" role="menu" aria-label="Idioma">
+                <button type="button" data-language-choice="pt-BR" role="menuitem"><span>PT</span> Português</button>
+                <button type="button" data-language-choice="en" role="menuitem"><span>EN</span> English</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-card card-anim" style="--delay:0">
+          <div class="settings-row">
+            <div class="settings-row-icon">
+              <svg class="ic"><use href="#ic-moon"/></svg>
+            </div>
+            <div class="settings-row-text">
+              <div class="settings-row-title">Aparência</div>
+              <div class="settings-row-desc">Alterne entre o tema claro e o tema escuro do painel.</div>
+            </div>
+            <label class="theme-switch" for="themeSwitchInput">
+              <input type="checkbox" id="themeSwitchInput">
+              <span class="theme-switch-track">
+                <span class="theme-switch-thumb">
+                  <svg class="ic theme-icon theme-icon--moon"><use href="#ic-moon"/></svg>
+                  <svg class="ic theme-icon theme-icon--sun"><use href="#ic-sun"/></svg>
+                </span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-card card-anim settings-card-palette palette-studio" style="--delay:1">
+          <div class="palette-studio-head"><div class="settings-row-icon"><svg class="ic"><use href="#ic-sun"/></svg></div><div class="settings-row-text"><div class="settings-row-title">Paleta visual</div><div class="settings-row-desc">Uma identidade consistente para textos, botões, hovers, sombras e scrollbar.</div></div><span class="palette-live-status" id="paletteLiveStatus"><i></i> Aplicada agora</span></div>
+          <div class="settings-palette-options palette-options-modern" aria-label="Escolher paleta visual">
+            <button type="button" class="accent-choice accent-violet" data-accent-choice="violet" aria-label="Nexus Original"><span class="accent-choice-top"><i></i><b>Nexus Original</b></span><small>Equilíbrio e foco</small></button>
+            <button type="button" class="accent-choice accent-ocean" data-accent-choice="ocean" aria-label="Maré Ciano"><span class="accent-choice-top"><i></i><b>Maré Ciano</b></span><small>Clareza e precisão</small></button>
+            <button type="button" class="accent-choice accent-emerald" data-accent-choice="emerald" aria-label="Floresta Neon"><span class="accent-choice-top"><i></i><b>Floresta Neon</b></span><small>Energia e controle</small></button>
+            <button type="button" class="accent-choice accent-sunset" data-accent-choice="sunset" aria-label="Aurora Solar"><span class="accent-choice-top"><i></i><b>Aurora Solar</b></span><small>Calor e destaque</small></button>
+            <button type="button" class="accent-choice accent-rose" data-accent-choice="rose" aria-label="Rosa Cósmica"><span class="accent-choice-top"><i></i><b>Rosa Cósmica</b></span><small>Expressão e ritmo</small></button>
+          </div>
+        </div>
+
+        <div class="settings-card card-anim settings-card-sound" style="--delay:1">
+          <div class="settings-row settings-row-sound">
+            <div class="settings-row-icon">
+              <svg class="ic"><use href="#ic-volume"/></svg>
+            </div>
+            <div class="settings-row-text">
+              <div class="settings-row-title">Sons da interface</div>
+              <div class="settings-row-desc">Ative ou desative os sons de botões, avisos e ações do site.</div>
+            </div>
+            <label class="theme-switch" for="soundSwitchInput">
+              <input type="checkbox" id="soundSwitchInput" data-sound-toggle>
+              <span class="theme-switch-track">
+                <span class="theme-switch-thumb"><svg class="ic"><use href="#ic-volume"/></svg></span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-card card-anim settings-card-sound" style="--delay:2">
+          <div class="settings-row settings-row-sound">
+            <div class="settings-row-icon">
+              <svg class="ic"><use href="#ic-volume"/></svg>
+            </div>
+            <div class="settings-row-text">
+              <div class="settings-row-title">Música de fundo</div>
+              <div class="settings-row-desc">Ative ou desative as músicas que tocam durante a navegação.</div>
+            </div>
+            <label class="theme-switch" for="musicSwitchInput">
+              <input type="checkbox" id="musicSwitchInput" data-music-toggle>
+              <span class="theme-switch-track">
+                <span class="theme-switch-thumb"><svg class="ic"><use href="#ic-volume"/></svg></span>
+              </span>
+            </label>
+          </div>
+          <div class="music-volume-control">
+            <div class="music-volume-heading">
+              <label for="musicVolumeInput">Volume da música</label>
+              <output id="musicVolumeValue" for="musicVolumeInput">14%</output>
+            </div>
+            <div class="music-volume-range">
+              <svg class="ic" aria-hidden="true"><use href="#ic-volume"/></svg>
+              <input id="musicVolumeInput" type="range" min="0" max="100" step="1" value="14" data-music-volume aria-label="Volume da música">
+            </div>
+            <div class="music-volume-warning" data-music-volume-warning hidden aria-hidden="true" role="status">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 13.5a7.5 7.5 0 0 1-15 0V10a5 5 0 0 1 10 0v3.5a2.5 2.5 0 0 1-5 0V10"/><path d="M19.5 13.5V15a5.5 5.5 0 0 1-11 0"/><path d="M21 5.5v4M21 12.5h.01"/></svg>
+              <span>Volume alto: tenha cuidado para proteger sua audição.</span>
+            </div>
+            <div class="settings-music-player" aria-label="Controles da música de fundo">
+              <div class="settings-music-player-info"><span class="settings-music-kicker">TRILHA ATUAL</span><strong data-music-track>Preparando a trilha sonora</strong><small data-music-state>Em pausa</small></div>
+              <div class="settings-music-controls"><button type="button" class="settings-music-btn" data-music-prev aria-label="Música anterior" title="Música anterior"><svg class="ic"><use href="#ic-chevron-down"/></svg></button><button type="button" class="settings-music-btn settings-music-btn-main" data-music-play aria-label="Tocar música" title="Tocar música"><svg class="ic" data-music-play-icon><use href="#ic-play"/></svg></button><button type="button" class="settings-music-btn" data-music-next aria-label="Próxima música" title="Próxima música"><svg class="ic settings-music-next-icon"><use href="#ic-chevron-down"/></svg></button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="placeholder-view settings-card-more" style="margin-top:18px;">
+          <div class="placeholder-icon"><svg class="ic"><use href="#ic-gear"/></svg></div>
+          <h2>Mais opções em breve</h2>
+          <p>Novas opções de configurações gerais do Nexus Air serão adicionadas aqui.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="usuarioModalOverlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="usuarioModalTitulo">Novo Usuário</h3>
+      <button class="modal-close" id="usuarioModalClose" aria-label="Fechar"><svg class="ic"><use href="#ic-x"/></svg></button>
+    </div>
+
+    <div class="form-alert" id="usuarioModalAlert" hidden></div>
+
+    <form id="usuarioForm">
+      <input type="hidden" id="usuarioId">
+      <div class="form-group">
+        <label for="usuarioNome">Nome completo</label>
+        <input type="text" id="usuarioNome" required>
+      </div>
+      <div class="form-group">
+        <label for="usuarioEmail">E-mail</label>
+        <div class="email-assignment-row">
+          <input type="email" id="usuarioEmail" required>
+          <button type="button" class="btn-secondary btn-email-corporativo" id="gerarEmailCorporativoBtn">Gerar</button>
+        </div>
+        <small class="form-hint" id="emailCorporativoHint">Gere um endereço no domínio da empresa a partir do nome.</small>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="usuarioCargo">Cargo</label>
+          <select id="usuarioCargo" required>
+            <option value="" selected disabled>Selecione o cargo</option>
+            <option>Estagiário</option>
+            <option>Auxiliar</option>
+            <option>Desenvolvedor Júnior</option>
+            <option>Desenvolvedor Pleno</option>
+            <option>Desenvolvedor Sênior</option>
+            <option>Coordenador</option>
+            <option>Gerente</option>
+            <option>Diretor</option>
+            <option>Administrador</option>
+            <option>Sócio</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usuarioDepartamento">Departamento</label>
+          <input type="text" id="usuarioDepartamento" placeholder="Opcional">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="usuarioTipoAcesso">Tipo de acesso</label>
+          <select id="usuarioTipoAcesso">
+            <option value="padrao">Padrão</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usuarioSenha">Senha</label>
+          <input type="password" id="usuarioSenha" placeholder="Mín. 6 caracteres" minlength="6">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="usuarioDataNascimento">Data de aniversário</label>
+        <input type="date" id="usuarioDataNascimento">
+      </div>
+      <p class="form-hint" id="usuarioSenhaHint" hidden>Deixe em branco para manter a senha atual.</p>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary" id="usuarioCancelarBtn">Cancelar</button>
+        <button type="submit" class="btn-primary" id="usuarioSalvarBtn">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal-overlay ram-history-overlay" id="ramHistoryOverlay" aria-hidden="true">
+  <div class="modal ram-history-modal" role="dialog" aria-modal="true" aria-labelledby="ramHistoryTitle">
+    <div class="modal-header"><div><span class="ram-history-kicker">MONITORAMENTO EM TEMPO REAL</span><h3 id="ramHistoryTitle">Histórico de Uso da Memória Física</h3></div><button class="modal-close" id="ramHistoryClose" type="button" aria-label="Fechar"><svg class="ic"><use href="#ic-x"></use></svg></button></div>
+    <div class="ram-history-summary"><div><span>Uso atual</span><strong id="ramHistoryCurrent">--%</strong></div><div><span>Pico registrado</span><strong id="ramHistoryPeak">--%</strong></div><div><span>Amostras</span><strong id="ramHistorySamples">0</strong></div></div>
+    <div class="ram-history-chart-wrap"><canvas id="ramHistoryDetailChart" height="220"></canvas><div class="ram-history-axis"><span>100%</span><span>50%</span><span>0%</span></div></div>
+    <p class="ram-history-note">A leitura é atualizada automaticamente a cada quatro segundos a partir do status real da máquina.</p>
+  </div>
+</div>
+
+<div class="modal-overlay" id="alertsCenterOverlay">
+  <div class="modal alerts-center" role="dialog" aria-modal="true" aria-labelledby="alertsCenterTitle">
+    <div class="modal-header">
+      <h3 id="alertsCenterTitle">Verificar alertas</h3>
+      <button class="modal-close" id="alertsCenterClose" aria-label="Fechar"><svg class="ic"><use href="#ic-x"/></svg></button>
+    </div>
+    <div class="alerts-center-body">
+      <aside class="alerts-center-side">
+        <div class="alerts-tabs" role="tablist">
+          <button type="button" class="alerts-tab is-active" data-alerts-tab="pendente" role="tab">Pendentes <span class="alerts-tab-count" id="alertsTabPendentes">0</span></button>
+          <button type="button" class="alerts-tab" data-alerts-tab="verificado" role="tab">Verificados</button>
+        </div>
+        <div class="alerts-center-list" id="alertsCenterList"></div>
+        <button type="button" class="btn-secondary alerts-center-new" id="alertsCenterNewBtn"><svg class="ic"><use href="#ic-plus"/></svg> Novo alerta</button>
+      </aside>
+      <section class="alerts-center-detail" id="alertsCenterDetail" aria-live="polite"></section>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="confirmDeleteOverlay">
+  <div class="modal confirm-modal" role="alertdialog" aria-modal="true" aria-labelledby="confirmDeleteTitle" aria-describedby="confirmDeleteText">
+    <div class="modal-header">
+      <h3 id="confirmDeleteTitle">Excluir tarefa?</h3>
+      <button class="modal-close" id="confirmDeleteClose" type="button" aria-label="Fechar"><svg class="ic"><use href="#ic-x"/></svg></button>
+    </div>
+    <div class="confirm-modal-body">
+      <span class="confirm-modal-icon"><svg class="ic"><use href="#ic-trash"/></svg></span>
+      <p id="confirmDeleteText"></p>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn-secondary" id="confirmDeleteCancel">Cancelar</button>
+      <button type="button" class="btn-primary btn-danger" id="confirmDeleteYes">Sim, excluir</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="cxConfirmOverlay">
+  <div class="modal confirm-modal" role="alertdialog" aria-modal="true" aria-labelledby="cxConfirmTitle" aria-describedby="cxConfirmText">
+    <div class="modal-header">
+      <h3 id="cxConfirmTitle">Excluir conector?</h3>
+      <button class="modal-close" id="cxConfirmClose" type="button" aria-label="Fechar"><svg class="ic"><use href="#ic-x"/></svg></button>
+    </div>
+    <div class="confirm-modal-body">
+      <span class="confirm-modal-icon"><svg class="ic"><use href="#ic-trash"/></svg></span>
+      <p id="cxConfirmText"></p>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn-secondary" id="cxConfirmCancel">Cancelar</button>
+      <button type="button" class="btn-primary btn-danger" id="cxConfirmYes">Sim, excluir</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="alertNewOverlay">
+  <div class="modal alert-new-modal" role="dialog" aria-modal="true" aria-labelledby="alertNewTitle">
+    <div class="modal-header">
+      <h3 id="alertNewTitle">Novo alerta</h3>
+      <button class="modal-close" id="alertNewClose" aria-label="Fechar"><svg class="ic"><use href="#ic-x"/></svg></button>
+    </div>
+    <div class="form-alert" id="alertNewError" hidden></div>
+    <form id="alertNewForm" novalidate>
+      <div class="form-row">
+        <div class="form-group"><label for="alertNewTipo">Tipo do alerta</label><input type="text" id="alertNewTipo" maxlength="100" placeholder="Ex.: CPU alta" required></div>
+        <div class="form-group"><label for="alertNewSeveridade">Severidade</label>
+          <select id="alertNewSeveridade"><option value="baixa">Baixa</option><option value="media" selected>Média</option><option value="alta">Alta</option><option value="critica">Crítica</option></select></div>
+      </div>
+      <div class="form-group"><label for="alertNewStatus">Resumo</label><input type="text" id="alertNewStatus" maxlength="200" placeholder="Ex.: CPU em 92% há 10 minutos" required></div>
+      <div class="form-row">
+        <div class="form-group"><label for="alertNewMaquina">Máquina virtual</label><select id="alertNewMaquina" required></select></div>
+        <div class="form-group"><label for="alertNewBanco">Banco de dados</label><select id="alertNewBanco" required></select></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label for="alertNewContexto">Contexto <small>(opcional)</small></label><input type="text" id="alertNewContexto" maxlength="100" placeholder="Ex.: Oracle, backup..."></div>
+        <div class="form-group"><label for="alertNewOrigem">Origem <small>(opcional)</small></label><input type="text" id="alertNewOrigem" maxlength="50" placeholder="manual"></div>
+      </div>
+      <div class="form-group"><label for="alertNewDescricao">Descrição detalhada <small>(opcional)</small></label><textarea id="alertNewDescricao" maxlength="500" rows="3" placeholder="O que aconteceu, impacto, desde quando..."></textarea></div>
+      <div class="form-group"><label for="alertNewRecomendacao">Ação recomendada <small>(opcional)</small></label><textarea id="alertNewRecomendacao" maxlength="500" rows="2" placeholder="O que a pessoa deve fazer ao verificar"></textarea></div>
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary" id="alertNewCancel">Cancelar</button>
+        <button type="submit" class="btn-primary" id="alertNewSubmit">Criar alerta</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="birthdayCelebration" class="birthday-celebration" hidden aria-hidden="true">
+  <div class="birthday-balloons" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="birthday-confetti" aria-hidden="true"></div>
+  <div class="birthday-card" role="dialog" aria-modal="true" aria-labelledby="birthdayTitle">
+    <div class="birthday-sparkle">✦</div><span class="birthday-kicker">UM MOMENTO ESPECIAL NO NEXUS AIR</span><h2 id="birthdayTitle">Feliz aniversário, <strong id="birthdayUserName">você</strong>!</h2><p>Que seu novo ciclo venha cheio de conquistas, saúde e bons momentos.</p><button type="button" class="btn-primary birthday-finish" id="birthdayFinishBtn">Finalizar tema aniversário</button>
+  </div>
+</div>
+
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="dg-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></symbol>
+        <symbol id="dg-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 4v5h-5"/></symbol>
+        <symbol id="dg-restore" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/><path d="M12 8v4l3 2"/></symbol>
+        <symbol id="dg-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
+        <symbol id="dg-lock" viewBox="0 0 24 24"><rect x="4" y="10.5" width="16" height="10.5" rx="3"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></symbol>
+        <symbol id="dg-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></symbol>
+        <symbol id="dg-inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.9A2 2 0 0 0 16.7 4H7.3a2 2 0 0 0-1.8 1.1Z"/></symbol>
+        <symbol id="dg-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.8-9.8M16 7l3 3M14 9l2 2"/></symbol>
+        <symbol id="dg-cloud" viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.4 9.2 4.8 4.8 0 0 0 7 19h10.5Z"/><path d="m9 14 3-3 3 3M12 11v7" /></symbol>
+        <symbol id="dg-layers" viewBox="0 0 24 24"><path d="m12 3 9 4.5-9 4.5-9-4.5L12 3Z"/><path d="m3 12 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/></symbol>
+      </svg>
+
+      <!-- modal genérico das duas telas -->
+      <div class="dg-overlay" id="dgOverlay" aria-hidden="true">
+        <div class="dg-modal" id="dgModal" role="dialog" aria-modal="true" aria-labelledby="dgModalTitulo"></div>
+      </div>
+
+<script src="/js/sons.js?v=20261022-musica3"></script>
+<script src="/js/abertura.js?v=20261022-abertura6"></script>
+<script src="/js/tema.js"></script>
+<script src="/js/idioma.js?v=20261005-idioma4"></script>
+<script src="/js/auth.js?v=20261022-auth3"></script>
+<script src="/js/calendario-periodo.js?v=20261022-hora2"></script>
+<script src="/js/script.js?v=20261023-usr1"></script>
+<script src="/js/calendario-aniversario.js?v=20261022-zbx"></script>
+<script src="/js/seletor-data-hora.js?v=20261022-sdh3"></script>
+<script src="/js/topo-bg.js"></script>
+<script src="/js/navegacao.js?v=20261022-nav5"></script>
+<script src="/js/selects.js?v=20261022-sel3"></script>
+<script src="/js/automation.js"></script>
+<script src="/js/maquinas.js?v=20261023-cx7"></script>
+<script src="/js/agendamentos.js?v=20261022-bd3"></script>
+<script src="/js/distribuicao-governanca.js?v=20261022-dg2"></script>
+<script src="/js/aniversario.js?v=20261021-aniv3"></script>
+</body>
+</html>

@@ -1,0 +1,600 @@
+html,
+body,
+.app,
+.content,
+.command-panel,
+.command-results,
+.notif-dropdown,
+.user-dropdown,
+.modal-overlay,
+.modal,
+.table-card,
+.auth-body,
+.auth-form-panel {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(91, 46, 224, 0.62) transparent;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.app::-webkit-scrollbar,
+.content::-webkit-scrollbar,
+.command-panel::-webkit-scrollbar,
+.command-results::-webkit-scrollbar,
+.notif-dropdown::-webkit-scrollbar,
+.user-dropdown::-webkit-scrollbar,
+.modal-overlay::-webkit-scrollbar,
+.modal::-webkit-scrollbar,
+.table-card::-webkit-scrollbar,
+.auth-body::-webkit-scrollbar,
+.auth-form-panel::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+.app::-webkit-scrollbar-track,
+.content::-webkit-scrollbar-track,
+.command-panel::-webkit-scrollbar-track,
+.command-results::-webkit-scrollbar-track,
+.notif-dropdown::-webkit-scrollbar-track,
+.user-dropdown::-webkit-scrollbar-track,
+.modal-overlay::-webkit-scrollbar-track,
+.modal::-webkit-scrollbar-track,
+.table-card::-webkit-scrollbar-track,
+.auth-body::-webkit-scrollbar-track,
+.auth-form-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+.app::-webkit-scrollbar-thumb,
+.content::-webkit-scrollbar-thumb,
+.command-panel::-webkit-scrollbar-thumb,
+.command-results::-webkit-scrollbar-thumb,
+.notif-dropdown::-webkit-scrollbar-thumb,
+.user-dropdown::-webkit-scrollbar-thumb,
+.modal-overlay::-webkit-scrollbar-thumb,
+.modal::-webkit-scrollbar-thumb,
+.table-card::-webkit-scrollbar-thumb,
+.auth-body::-webkit-scrollbar-thumb,
+.auth-form-panel::-webkit-scrollbar-thumb {
+  background: rgba(91, 46, 224, 0.62);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+.app::-webkit-scrollbar-thumb:hover,
+.content::-webkit-scrollbar-thumb:hover,
+.command-panel::-webkit-scrollbar-thumb:hover,
+.command-results::-webkit-scrollbar-thumb:hover,
+.notif-dropdown::-webkit-scrollbar-thumb:hover,
+.user-dropdown::-webkit-scrollbar-thumb:hover,
+.modal-overlay::-webkit-scrollbar-thumb:hover,
+.modal::-webkit-scrollbar-thumb:hover,
+.table-card::-webkit-scrollbar-thumb:hover,
+.auth-body::-webkit-scrollbar-thumb:hover,
+.auth-form-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(91, 46, 224, 0.9);
+  background-clip: padding-box;
+}
+html[data-theme="dark"] html,
+html[data-theme="dark"] body,
+html[data-theme="dark"] .app,
+html[data-theme="dark"] .content,
+html[data-theme="dark"] .command-panel,
+html[data-theme="dark"] .command-results,
+html[data-theme="dark"] .notif-dropdown,
+html[data-theme="dark"] .user-dropdown,
+html[data-theme="dark"] .modal-overlay,
+html[data-theme="dark"] .modal,
+html[data-theme="dark"] .table-card,
+html[data-theme="dark"] .auth-body,
+html[data-theme="dark"] .auth-form-panel {
+  scrollbar-color: rgba(245, 166, 35, 0.72) transparent;
+}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(245, 166, 35, 0.72);
+  background-clip: padding-box;
+}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 166, 35, 0.95);
+  background-clip: padding-box;
+}
+.command-panel.closing-outside {
+  transform: translateY(-5px) scale(0.985) !important;
+  opacity: 0 !important;
+}
+html,
+body {
+  scrollbar-gutter: stable;
+}
+html[data-theme="dark"]::-webkit-scrollbar-thumb,
+html[data-theme="dark"] body::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .app::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .content::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .command-panel::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .command-results::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .notif-dropdown::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .user-dropdown::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .modal-overlay::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .modal::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .table-card::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .auth-body::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .auth-form-panel::-webkit-scrollbar-thumb {
+  background: rgba(245, 166, 35, 0.72);
+  background-clip: padding-box;
+}
+html[data-theme="dark"]::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] body::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .app::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .content::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .command-panel::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .command-results::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .notif-dropdown::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .user-dropdown::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .modal-overlay::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .modal::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .table-card::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .auth-body::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .auth-form-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 166, 35, 0.95);
+  background-clip: padding-box;
+}
+.command-close {
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  font-size: 0 !important;
+}
+.command-close::before {
+  content: "×";
+  display: block;
+  color: currentColor;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 20px;
+  transform: translateY(-1px);
+}
+.command-close:hover::before {
+  transform: translateY(-1px) scale(1.08);
+}
+.command-close {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  overflow: hidden;
+}
+.command-close::before,
+.command-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 13px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transform-origin: center center;
+}
+.command-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.command-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.command-close:hover::before {
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.08);
+}
+.command-close:hover::after {
+  transform: translate(-50%, -50%) rotate(-45deg) scale(1.08);
+}
+* {
+  scrollbar-color: rgba(91, 46, 224, 0.62) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent !important;
+}
+*::-webkit-scrollbar-track {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+*::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(91, 46, 224, 0.62);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(91, 46, 224, 0.9);
+  background-clip: padding-box;
+}
+html[data-theme="dark"] * {
+  scrollbar-color: rgba(245, 166, 35, 0.72) transparent;
+}
+html[data-theme="dark"] *::-webkit-scrollbar {
+  background: transparent !important;
+}
+html[data-theme="dark"] *::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+html[data-theme="dark"] *::-webkit-scrollbar-thumb {
+  background: rgba(245, 166, 35, 0.72);
+  background-clip: padding-box;
+}
+html[data-theme="dark"] *::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 166, 35, 0.95);
+  background-clip: padding-box;
+}
+.command-results,
+.notif-dropdown,
+.user-dropdown,
+.modal-overlay,
+.modal,
+.table-card,
+.auth-form-panel {
+  scrollbar-width: thin !important;
+  -ms-overflow-style: auto !important;
+}
+.command-results::-webkit-scrollbar,
+.notif-dropdown::-webkit-scrollbar,
+.user-dropdown::-webkit-scrollbar,
+.modal-overlay::-webkit-scrollbar,
+.modal::-webkit-scrollbar,
+.table-card::-webkit-scrollbar,
+.auth-form-panel::-webkit-scrollbar {
+  display: block !important;
+  width: 8px !important;
+  height: 8px !important;
+  background: transparent !important;
+}
+.command-results::-webkit-scrollbar-track,
+.notif-dropdown::-webkit-scrollbar-track,
+.user-dropdown::-webkit-scrollbar-track,
+.modal-overlay::-webkit-scrollbar-track,
+.modal::-webkit-scrollbar-track,
+.table-card::-webkit-scrollbar-track,
+.auth-form-panel::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+.app {
+  height: 100vh;
+  max-height: 100vh;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+html,
+body,
+.app,
+.content,
+.command-panel,
+.command-results,
+.notif-dropdown,
+.user-dropdown,
+.modal-overlay,
+.modal,
+.table-card,
+.auth-body,
+.auth-form-panel {
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(91, 46, 224, 0.72) transparent !important;
+  -ms-overflow-style: auto !important;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.app::-webkit-scrollbar,
+.content::-webkit-scrollbar,
+.command-panel::-webkit-scrollbar,
+.command-results::-webkit-scrollbar,
+.notif-dropdown::-webkit-scrollbar,
+.user-dropdown::-webkit-scrollbar,
+.modal-overlay::-webkit-scrollbar,
+.modal::-webkit-scrollbar,
+.table-card::-webkit-scrollbar,
+.auth-body::-webkit-scrollbar,
+.auth-form-panel::-webkit-scrollbar {
+  display: block !important;
+  width: 10px !important;
+  height: 10px !important;
+  background-color: transparent !important;
+}
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+.app::-webkit-scrollbar-track,
+.content::-webkit-scrollbar-track,
+.command-panel::-webkit-scrollbar-track,
+.command-results::-webkit-scrollbar-track,
+.notif-dropdown::-webkit-scrollbar-track,
+.user-dropdown::-webkit-scrollbar-track,
+.modal-overlay::-webkit-scrollbar-track,
+.modal::-webkit-scrollbar-track,
+.table-card::-webkit-scrollbar-track,
+.auth-body::-webkit-scrollbar-track,
+.auth-form-panel::-webkit-scrollbar-track {
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+.app::-webkit-scrollbar-thumb,
+.content::-webkit-scrollbar-thumb,
+.command-panel::-webkit-scrollbar-thumb,
+.command-results::-webkit-scrollbar-thumb,
+.notif-dropdown::-webkit-scrollbar-thumb,
+.user-dropdown::-webkit-scrollbar-thumb,
+.modal-overlay::-webkit-scrollbar-thumb,
+.modal::-webkit-scrollbar-thumb,
+.table-card::-webkit-scrollbar-thumb,
+.auth-body::-webkit-scrollbar-thumb,
+.auth-form-panel::-webkit-scrollbar-thumb {
+  background-color: rgba(91, 46, 224, 0.72) !important;
+  background-image: none !important;
+  border: 2px solid transparent !important;
+  border-radius: 999px !important;
+  background-clip: padding-box !important;
+}
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+.app::-webkit-scrollbar-thumb:hover,
+.content::-webkit-scrollbar-thumb:hover,
+.command-panel::-webkit-scrollbar-thumb:hover,
+.command-results::-webkit-scrollbar-thumb:hover,
+.notif-dropdown::-webkit-scrollbar-thumb:hover,
+.user-dropdown::-webkit-scrollbar-thumb:hover,
+.modal-overlay::-webkit-scrollbar-thumb:hover,
+.modal::-webkit-scrollbar-thumb:hover,
+.table-card::-webkit-scrollbar-thumb:hover,
+.auth-body::-webkit-scrollbar-thumb:hover,
+.auth-form-panel::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(91, 46, 224, 0.95) !important;
+  background-image: none !important;
+  background-clip: padding-box !important;
+}
+html[data-theme="dark"] html,
+html[data-theme="dark"] body,
+html[data-theme="dark"] .app,
+html[data-theme="dark"] .content,
+html[data-theme="dark"] .command-panel,
+html[data-theme="dark"] .command-results,
+html[data-theme="dark"] .notif-dropdown,
+html[data-theme="dark"] .user-dropdown,
+html[data-theme="dark"] .modal-overlay,
+html[data-theme="dark"] .modal,
+html[data-theme="dark"] .table-card,
+html[data-theme="dark"] .auth-body,
+html[data-theme="dark"] .auth-form-panel {
+  scrollbar-color: rgba(245, 166, 35, 0.78) transparent !important;
+}
+html[data-theme="dark"]::-webkit-scrollbar,
+html[data-theme="dark"] body::-webkit-scrollbar,
+html[data-theme="dark"] .app::-webkit-scrollbar,
+html[data-theme="dark"] .content::-webkit-scrollbar,
+html[data-theme="dark"] .command-panel::-webkit-scrollbar,
+html[data-theme="dark"] .command-results::-webkit-scrollbar,
+html[data-theme="dark"] .notif-dropdown::-webkit-scrollbar,
+html[data-theme="dark"] .user-dropdown::-webkit-scrollbar,
+html[data-theme="dark"] .modal-overlay::-webkit-scrollbar,
+html[data-theme="dark"] .modal::-webkit-scrollbar,
+html[data-theme="dark"] .table-card::-webkit-scrollbar,
+html[data-theme="dark"] .auth-body::-webkit-scrollbar,
+html[data-theme="dark"] .auth-form-panel::-webkit-scrollbar {
+  background-color: transparent !important;
+}
+html[data-theme="dark"]::-webkit-scrollbar-track,
+html[data-theme="dark"] body::-webkit-scrollbar-track,
+html[data-theme="dark"] .app::-webkit-scrollbar-track,
+html[data-theme="dark"] .content::-webkit-scrollbar-track,
+html[data-theme="dark"] .command-panel::-webkit-scrollbar-track,
+html[data-theme="dark"] .command-results::-webkit-scrollbar-track,
+html[data-theme="dark"] .notif-dropdown::-webkit-scrollbar-track,
+html[data-theme="dark"] .user-dropdown::-webkit-scrollbar-track,
+html[data-theme="dark"] .modal-overlay::-webkit-scrollbar-track,
+html[data-theme="dark"] .modal::-webkit-scrollbar-track,
+html[data-theme="dark"] .table-card::-webkit-scrollbar-track,
+html[data-theme="dark"] .auth-body::-webkit-scrollbar-track,
+html[data-theme="dark"] .auth-form-panel::-webkit-scrollbar-track {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+html[data-theme="dark"]::-webkit-scrollbar-thumb,
+html[data-theme="dark"] body::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .app::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .content::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .command-panel::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .command-results::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .notif-dropdown::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .user-dropdown::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .modal-overlay::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .modal::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .table-card::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .auth-body::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .auth-form-panel::-webkit-scrollbar-thumb {
+  background-color: rgba(245, 166, 35, 0.78) !important;
+  background-image: none !important;
+  background-clip: padding-box !important;
+}
+html[data-theme="dark"]::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] body::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .app::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .content::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .command-panel::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .command-results::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .notif-dropdown::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .user-dropdown::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .modal-overlay::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .modal::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .table-card::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .auth-body::-webkit-scrollbar-thumb:hover,
+html[data-theme="dark"] .auth-form-panel::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(245, 166, 35, 0.98) !important;
+  background-image: none !important;
+  background-clip: padding-box !important;
+}
+html,
+body {
+  overflow-x: hidden;
+  scrollbar-gutter: auto;
+}
+.app {
+  overflow-x: hidden !important;
+}
+.content {
+  overflow-x: hidden;
+}
+*::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+.command-input,
+.command-input:focus-within {
+  border-color: var(--border-color) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.command-input input,
+.command-input input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+.command-subtitle {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+.command-result-copy {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+}
+.command-result-copy strong {
+  color: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+.command-result-copy small {
+  overflow: hidden;
+  color: var(--text-muted);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.command-result.is-active,
+.command-result:hover,
+.command-result:focus-visible {
+  background: var(--surface-2) !important;
+  color: var(--text-dark);
+  outline: none;
+}
+.command-result.is-active .command-result-icon,
+.command-result:hover .command-result-icon {
+  background: var(--border-color);
+}
+.command-empty {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.command-empty strong {
+  color: var(--text-dark);
+  font-size: 12px;
+}
+.command-empty span {
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+.command-footer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 10px;
+}
+.command-footer kbd {
+  padding: 2px 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 9px;
+}
+.view {
+  transform: translateY(14px) !important;
+}
+.view.show {
+  transform: translateY(0) !important;
+}
+.card-anim {
+  transform: translateY(18px) !important;
+  animation: cardEnterClean 0.55s var(--ease) forwards !important;
+}
+@keyframes cardEnterClean {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.command-panel {
+  transform: translateY(-12px) !important;
+  transition:
+    opacity 0.24s var(--ease),
+    transform 0.24s var(--ease) !important;
+  animation: none !important;
+}
+.command-panel.show {
+  transform: translateY(0) !important;
+  animation: none !important;
+}
+.command-panel.closing,
+.command-panel.closing-outside {
+  transform: translateY(-8px) !important;
+  transition:
+    opacity 0.18s var(--ease),
+    transform 0.18s var(--ease) !important;
+}
+.user-dropdown,
+.notif-dropdown {
+  transform: translateY(-12px) !important;
+}
+.user-dropdown.show,
+.notif-dropdown.show {
+  transform: translateY(0) !important;
+}
+.toast {
+  transform: translateY(20px) !important;
+}
+.toast.show {
+  transform: translateY(0) !important;
+}
+.app .view {
+  opacity: 0 !important;
+  transform: translate3d(0, 18px, 0) scale(0.985) !important;
+  transition:
+    opacity 0.34s var(--ease),
+    transform 0.42s var(--bounce) !important;
+  animation: none !important;
+}
+.app .view.show {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) scale(1) !important;
+}

@@ -1,0 +1,191 @@
+{
+  "name": "Nexus Air - Teste de conexão",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Teste de conexão (rode com *Execute workflow*)\nVerifica, em ordem: 1) n8n alcança o Nexus Air e a chave confere; 2) SSH no servidor Oracle + script + sudo; 3) envio de e-mail pelo Gmail.\nAjuste `base_url`, `email_teste` e `script` no nó **Config**. O primeiro nó que ficar vermelho mostra onde está o problema.",
+        "height": 220,
+        "width": 520
+      },
+      "id": "nota",
+      "name": "Leia primeiro",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        40
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "manual",
+      "name": "Executar teste",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "base_url",
+              "value": "http://host.docker.internal:5000",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "email_teste",
+              "value": "SEU-EMAIL@gmail.com",
+              "type": "string"
+            },
+            {
+              "id": "3",
+              "name": "script",
+              "value": "/opt/nexus/relatorio/relatorio_oracle.sh",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "config",
+      "name": "Config",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $('Config').first().json.base_url }}/api/n8n/ping",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "ping",
+      "name": "1 - Ping no Nexus Air",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "Nexus API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "command",
+        "operation": "execute",
+        "cwd": "/",
+        "command": "={{ 'echo \"SSH_OK usuario=$(whoami) host=$(hostname)\"; if [ -x ' + $('Config').first().json.script + ' ]; then echo SCRIPT_OK; else echo SCRIPT_AUSENTE_OU_SEM_PERMISSAO; fi; sudo -n -u oracle -l ' + $('Config').first().json.script + ' >/dev/null 2>&1 && echo SUDO_OK || echo SUDO_NAO_CONFIGURADO' }}"
+      },
+      "id": "ssh",
+      "name": "2 - Testar SSH e script",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        660,
+        300
+      ],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "",
+          "name": "Servidor Oracle"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Config').first().json.email_teste }}",
+        "subject": "Teste do n8n - Nexus Air",
+        "emailType": "html",
+        "message": "<p>Se você recebeu este e-mail, o Gmail do n8n está funcionando.</p>",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "Nexus Air"
+        }
+      },
+      "id": "gmail",
+      "name": "3 - Enviar e-mail de teste",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        880,
+        300
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "",
+          "name": "Gmail"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Executar teste": {
+      "main": [
+        [
+          {
+            "node": "Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Config": {
+      "main": [
+        [
+          {
+            "node": "1 - Ping no Nexus Air",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1 - Ping no Nexus Air": {
+      "main": [
+        [
+          {
+            "node": "2 - Testar SSH e script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2 - Testar SSH e script": {
+      "main": [
+        [
+          {
+            "node": "3 - Enviar e-mail de teste",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Sao_Paulo",
+    "saveManualExecutions": true
+  }
+}

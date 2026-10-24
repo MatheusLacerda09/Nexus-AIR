@@ -1,0 +1,411 @@
+{
+  "connectors": [],
+  "flows": [],
+  "templates": [],
+  "reports": [],
+  "schedules": [],
+  "logs": [
+    {
+      "evento": "maquina.criada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "sucesso",
+      "id": "b4b1790e4c1e",
+      "criado_em": "2026-10-22T04:09:19.416745+00:00",
+      "atualizado_em": "2026-10-22T04:09:19.416751+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "56d86b4497d6",
+      "criado_em": "2026-10-22T04:09:22.842521+00:00",
+      "atualizado_em": "2026-10-22T04:09:22.842536+00:00"
+    },
+    {
+      "evento": "maquina.criada",
+      "detalhe": "BANCO-TESTE",
+      "status": "sucesso",
+      "id": "a35fdc84cb4a",
+      "criado_em": "2026-10-22T04:10:06.115932+00:00",
+      "atualizado_em": "2026-10-22T04:10:06.115937+00:00"
+    },
+    {
+      "evento": "maquina.excluida",
+      "detalhe": "BANCO-TESTE",
+      "status": "sucesso",
+      "id": "1db8668a5cfc",
+      "criado_em": "2026-10-22T04:10:12.001051+00:00",
+      "atualizado_em": "2026-10-22T04:10:12.001059+00:00"
+    },
+    {
+      "evento": "maquina.criada",
+      "detalhe": "BANCO-TESTE",
+      "status": "sucesso",
+      "id": "ebbeea389d79",
+      "criado_em": "2026-10-22T04:10:43.650044+00:00",
+      "atualizado_em": "2026-10-22T04:10:43.650050+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "BANCO-TESTE",
+      "status": "erro",
+      "id": "180cdb47255a",
+      "criado_em": "2026-10-22T04:10:48.866691+00:00",
+      "atualizado_em": "2026-10-22T04:10:48.866698+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "7b09c62a88b4",
+      "criado_em": "2026-10-22T04:12:30.969482+00:00",
+      "atualizado_em": "2026-10-22T04:12:30.969490+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "7ecd04ba6c65",
+      "criado_em": "2026-10-22T04:12:32.311377+00:00",
+      "atualizado_em": "2026-10-22T04:12:32.311382+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "fda4275676b0",
+      "criado_em": "2026-10-22T04:12:32.971783+00:00",
+      "atualizado_em": "2026-10-22T04:12:32.971791+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "8dc9651050ff",
+      "criado_em": "2026-10-22T04:12:33.303839+00:00",
+      "atualizado_em": "2026-10-22T04:12:33.303846+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "b3a31acb7e44",
+      "criado_em": "2026-10-22T04:12:33.491225+00:00",
+      "atualizado_em": "2026-10-22T04:12:33.491235+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "45a46db22332",
+      "criado_em": "2026-10-22T04:12:33.691179+00:00",
+      "atualizado_em": "2026-10-22T04:12:33.691187+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "0a3f1370864e",
+      "criado_em": "2026-10-22T04:12:33.882122+00:00",
+      "atualizado_em": "2026-10-22T04:12:33.882128+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "6f63950921fb",
+      "criado_em": "2026-10-22T04:12:34.055507+00:00",
+      "atualizado_em": "2026-10-22T04:12:34.055515+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "e7264c6ec873",
+      "criado_em": "2026-10-22T04:13:03.298990+00:00",
+      "atualizado_em": "2026-10-22T04:13:03.298995+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "49ffb03590ec",
+      "criado_em": "2026-10-22T04:13:03.511612+00:00",
+      "atualizado_em": "2026-10-22T04:13:03.511618+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "f7678d82a4d8",
+      "criado_em": "2026-10-22T04:13:03.684136+00:00",
+      "atualizado_em": "2026-10-22T04:13:03.684142+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "164debd1f90f",
+      "criado_em": "2026-10-22T04:13:41.971474+00:00",
+      "atualizado_em": "2026-10-22T04:13:41.971482+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "6a1bcaf23a4f",
+      "criado_em": "2026-10-22T04:13:42.561609+00:00",
+      "atualizado_em": "2026-10-22T04:13:42.561614+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "00eb83363913",
+      "criado_em": "2026-10-22T04:13:42.750289+00:00",
+      "atualizado_em": "2026-10-22T04:13:42.750294+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "94adcf529cd3",
+      "criado_em": "2026-10-22T04:13:42.919728+00:00",
+      "atualizado_em": "2026-10-22T04:13:42.919734+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "70b6b9faff4f",
+      "criado_em": "2026-10-22T04:13:43.086481+00:00",
+      "atualizado_em": "2026-10-22T04:13:43.086486+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "53a4b9eeb244",
+      "criado_em": "2026-10-22T04:13:43.248487+00:00",
+      "atualizado_em": "2026-10-22T04:13:43.248494+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "b0813d1fafaa",
+      "criado_em": "2026-10-22T04:13:43.434840+00:00",
+      "atualizado_em": "2026-10-22T04:13:43.434845+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "173f1e311e3f",
+      "criado_em": "2026-10-22T04:13:43.593867+00:00",
+      "atualizado_em": "2026-10-22T04:13:43.593874+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "0b26899f65d4",
+      "criado_em": "2026-10-22T04:13:43.769733+00:00",
+      "atualizado_em": "2026-10-22T04:13:43.769738+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "erro",
+      "id": "2f88cb3bd632",
+      "criado_em": "2026-10-22T04:13:43.935433+00:00",
+      "atualizado_em": "2026-10-22T04:13:43.935439+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "sucesso",
+      "id": "8483006d4582",
+      "criado_em": "2026-10-22T04:46:36.176387+00:00",
+      "atualizado_em": "2026-10-22T04:46:36.176393+00:00"
+    },
+    {
+      "evento": "maquina.conectada",
+      "detalhe": "WINDOWS-TESTE",
+      "status": "sucesso",
+      "id": "64a3cf4ba712",
+      "criado_em": "2026-10-22T04:46:42.511193+00:00",
+      "atualizado_em": "2026-10-22T04:46:42.511199+00:00"
+    },
+    {
+      "evento": "agendamento.criado",
+      "detalhe": "teste 1 (executar agora)",
+      "status": "sucesso",
+      "id": "a5e7c6dd3324",
+      "criado_em": "2026-10-23T22:15:39.871117+00:00",
+      "atualizado_em": "2026-10-23T22:15:39.871122+00:00"
+    },
+    {
+      "evento": "agendamento.executar_agora",
+      "detalhe": "teste 1",
+      "status": "sucesso",
+      "id": "7ea76f894b36",
+      "criado_em": "2026-10-23T22:16:31.065415+00:00",
+      "atualizado_em": "2026-10-23T22:16:31.065421+00:00"
+    },
+    {
+      "evento": "agendamento.executar_agora",
+      "detalhe": "teste 1",
+      "status": "sucesso",
+      "id": "70aa1668c362",
+      "criado_em": "2026-10-23T22:16:32.624923+00:00",
+      "atualizado_em": "2026-10-23T22:16:32.624932+00:00"
+    },
+    {
+      "evento": "agendamento.executar_agora",
+      "detalhe": "teste 1",
+      "status": "sucesso",
+      "id": "c5a019f36277",
+      "criado_em": "2026-10-23T22:28:17.178466+00:00",
+      "atualizado_em": "2026-10-23T22:28:17.178476+00:00"
+    },
+    {
+      "evento": "agendamento.executar_agora",
+      "detalhe": "teste 1",
+      "status": "sucesso",
+      "id": "9ba92743ff13",
+      "criado_em": "2026-10-23T22:28:18.196985+00:00",
+      "atualizado_em": "2026-10-23T22:28:18.196993+00:00"
+    },
+    {
+      "evento": "agendamento.executar_agora",
+      "detalhe": "teste 1",
+      "status": "sucesso",
+      "id": "6b38be34792e",
+      "criado_em": "2026-10-23T22:28:18.641505+00:00",
+      "atualizado_em": "2026-10-23T22:28:18.641510+00:00"
+    },
+    {
+      "evento": "agendamento.executar_agora",
+      "detalhe": "teste 1",
+      "status": "sucesso",
+      "id": "bccd4e48f26c",
+      "criado_em": "2026-10-23T22:28:19.023598+00:00",
+      "atualizado_em": "2026-10-23T22:28:19.023607+00:00"
+    },
+    {
+      "evento": "agendamento.executar_agora",
+      "detalhe": "teste 1",
+      "status": "sucesso",
+      "id": "f5946ad267d0",
+      "criado_em": "2026-10-23T22:28:19.327536+00:00",
+      "atualizado_em": "2026-10-23T22:28:19.327542+00:00"
+    },
+    {
+      "evento": "agendamento.executar_agora",
+      "detalhe": "teste 1",
+      "status": "sucesso",
+      "id": "7ff7208def8e",
+      "criado_em": "2026-10-23T22:28:19.661202+00:00",
+      "atualizado_em": "2026-10-23T22:28:19.661208+00:00"
+    },
+    {
+      "evento": "agendamento.executar_agora",
+      "detalhe": "teste 1",
+      "status": "sucesso",
+      "id": "9a08bae047b8",
+      "criado_em": "2026-10-23T22:28:19.988699+00:00",
+      "atualizado_em": "2026-10-23T22:28:19.988704+00:00"
+    },
+    {
+      "evento": "agendamento.executar_agora",
+      "detalhe": "teste 1",
+      "status": "sucesso",
+      "id": "a8786407c7cb",
+      "criado_em": "2026-10-23T22:28:20.305362+00:00",
+      "atualizado_em": "2026-10-23T22:28:20.305369+00:00"
+    },
+    {
+      "evento": "agendamento.excluido",
+      "detalhe": "teste 1",
+      "status": "sucesso",
+      "id": "77323c8503c8",
+      "criado_em": "2026-10-23T22:30:21.062566+00:00",
+      "atualizado_em": "2026-10-23T22:30:21.062575+00:00"
+    },
+    {
+      "evento": "maquina.validada",
+      "detalhe": "BANCO-TESTE",
+      "status": "sucesso",
+      "id": "c510338d5b89",
+      "criado_em": "2026-10-23T22:30:40.265484+00:00",
+      "atualizado_em": "2026-10-23T22:30:40.265489+00:00"
+    },
+    {
+      "evento": "maquina.conectada",
+      "detalhe": "BANCO-TESTE",
+      "status": "sucesso",
+      "id": "d1ce138a26c6",
+      "criado_em": "2026-10-23T22:30:42.275321+00:00",
+      "atualizado_em": "2026-10-23T22:30:42.275333+00:00"
+    },
+    {
+      "evento": "agendamento.criado",
+      "detalhe": "fgtjhurturtjh (Uma vez, em 23/10/2026 às 20:00)",
+      "status": "sucesso",
+      "id": "5297e302c2af",
+      "criado_em": "2026-10-23T22:31:20.401241+00:00",
+      "atualizado_em": "2026-10-23T22:31:20.401247+00:00"
+    },
+    {
+      "evento": "agendamento.executar_agora",
+      "detalhe": "fgtjhurturtjh",
+      "status": "sucesso",
+      "id": "48f11d369389",
+      "criado_em": "2026-10-23T22:31:50.459782+00:00",
+      "atualizado_em": "2026-10-23T22:31:50.459790+00:00"
+    },
+    {
+      "evento": "agendamento.excluido",
+      "detalhe": "fgtjhurturtjh",
+      "status": "sucesso",
+      "id": "95b0508e79c4",
+      "criado_em": "2026-10-23T22:33:11.264001+00:00",
+      "atualizado_em": "2026-10-23T22:33:11.264012+00:00"
+    }
+  ],
+  "maquinas": [
+    {
+      "cliente": "Teste de Empresa",
+      "nome": "WINDOWS-TESTE",
+      "tipo": "windows",
+      "endereco": "10.0.2.15",
+      "host_zabbix": "WINDOWS-TESTE",
+      "descricao": "SESVIDOR DO WINDOWS DE TESTE",
+      "status": "conectada",
+      "mensagem": "Conectada: CPU 1% · RAM 0%.",
+      "ultima_validacao": "2026-10-22T04:46:42.220209+00:00",
+      "zabbix_hostid": "10692",
+      "id": "2c1a32d4061c",
+      "criado_em": "2026-10-22T04:09:19.414888+00:00",
+      "atualizado_em": "2026-10-22T04:46:42.508944+00:00"
+    },
+    {
+      "cliente": "Teste de Empresa",
+      "nome": "BANCO-TESTE",
+      "tipo": "banco",
+      "endereco": "10.0.2.15",
+      "host_zabbix": "BANCO-TESTE",
+      "descricao": "SERVIDOR DE BANCO TESTE",
+      "status": "conectada",
+      "mensagem": "Conectada: CPU 0% · RAM 0%.",
+      "ultima_validacao": "2026-10-23T22:30:41.986498+00:00",
+      "zabbix_hostid": "10691",
+      "id": "5717610d0903",
+      "criado_em": "2026-10-22T04:10:43.648022+00:00",
+      "atualizado_em": "2026-10-23T22:30:42.272045+00:00",
+      "instancia": "ROOT"
+    }
+  ],
+  "bancos": []
+}

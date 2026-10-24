@@ -1,0 +1,44 @@
+.field-input.cargo-field{z-index:5}
+.field:has(.cx-sel.is-aberto){position:relative;z-index:80}
+
+.field-input .cx-sel .cx-sel-btn{
+  min-height:39px;
+  padding:7px 34px 7px 12px;
+  gap:9px;
+  border:1.5px solid var(--border-color);
+  border-radius:10px;
+  background:var(--input-bg);
+  box-shadow:none;
+  font:500 13.5px var(--font-main);
+  color:var(--text-dark);
+}
+.field-input .cx-sel .cx-sel-btn.tem-ico{padding:5px 34px 5px 6px;min-height:39px}
+.field-input .cx-sel .cx-sel-btn.is-vazio span{color:var(--text-muted);font-weight:500}
+.field-input .cx-sel .cx-sel-btn>svg{position:absolute;right:12px;top:50%;margin-top:-8px}
+.field-input .cx-sel .cx-sel-btn:hover{border-color:var(--purple-light);box-shadow:none}
+.field-input .cx-sel .cx-sel-btn:focus-visible,
+.field-input .cx-sel.is-aberto .cx-sel-btn{
+  outline:none;
+  border-color:var(--purple-light);
+  box-shadow:0 0 0 3px var(--purple-pale);
+}
+
+.field-input .cx-sel .cx-sel-btn .cx-sel-ico{width:28px;height:28px;border-radius:9px}
+.field-input .cx-sel .cx-sel-btn .cx-sel-ico svg{width:15px;height:15px}
+
+.cx-sel select.field-invalid ~ .cx-sel-btn{border-color:var(--red)!important;animation:fieldShake .35s var(--ease)}
+.cx-sel select.field-valid ~ .cx-sel-btn{border-color:var(--green)!important}
+
+.field-input .cx-sel .cx-sel-lista{border-radius:14px;padding:6px 4px 6px 6px}
+.field-input .cx-sel .cx-sel-op{font-size:13px}
+.field-input .cx-sel .cx-sel-op.tem-ico .cx-sel-ico{width:30px;height:30px;border-radius:10px}
+.field-input .cx-sel .cx-sel-op.tem-ico .cx-sel-ico svg{width:16px;height:16px}
+
+.field-input .cx-sel .cx-sel-lista{right:auto;min-width:100%;width:max-content;max-width:min(300px,calc(100vw - 48px))}
+.field-input .cx-sel .cx-sel-op span{white-space:nowrap}
+
+.field-input .cx-sel .cx-sel-op.is-vazia{display:none}
+
+.field-input .cx-sel .cx-sel-lista{background:var(--surface);-webkit-backdrop-filter:none;backdrop-filter:none}
+.field-input .cx-sel .cx-sel-op.tem-ico{padding:5px 10px 5px 6px}
+

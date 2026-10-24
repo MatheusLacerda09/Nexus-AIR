@@ -1,0 +1,390 @@
+.app,
+.app * {
+  min-width: 0;
+}
+.app {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.app .main,
+.app .content,
+.app .view {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+.app img,
+.app canvas,
+.app svg {
+  max-width: 100%;
+}
+.app .content {
+  overflow-x: hidden;
+}
+.app .table-card {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.app table {
+  max-width: none;
+}
+.app .table-header-row,
+.app .relatorio-filtro,
+.app .settings-row,
+.app .modal-actions {
+  min-width: 0;
+}
+.app .table-header-row > *,
+.app .settings-row > * {
+  min-width: 0;
+}
+.app .table-header-row h2,
+.app .settings-row-text {
+  overflow-wrap: anywhere;
+}
+.app .placeholder-view p,
+.app .alert-text,
+.app .user-dropdown-email {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1100px) {
+  .app .content {
+    padding: 28px 24px 42px;
+  }
+  .app .lower-row {
+    grid-template-columns: 1fr;
+  }
+  .app .alerts-card {
+    min-height: 150px;
+  }
+}
+@media (max-width: 900px) {
+  .app .topbar {
+    padding: 0 18px;
+  }
+  .app .content {
+    padding: 25px 20px 38px;
+  }
+  .app .cards-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .app .cards-row > .card:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+  .app .card {
+    min-width: 0;
+  }
+  .app .card-body {
+    min-width: 0;
+  }
+  .app .table-header-row {
+    align-items: flex-start;
+  }
+  .app .table-header-row h2 {
+    max-width: 100%;
+  }
+  .app .placeholder-view {
+    width: 100%;
+  }
+}
+@media (max-width: 640px) {
+  .app .topbar {
+    height: 64px;
+    padding: 0 12px;
+  }
+  .app .burger {
+    width: 36px;
+    height: 36px;
+    padding: 7px;
+    flex-shrink: 0;
+  }
+  .app .top-icons {
+    gap: 0;
+    min-width: 0;
+  }
+  .app .icon-btn {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+  .app .user-chip {
+    width: 36px;
+    height: 36px;
+    min-height: 36px;
+    padding: 7px;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .app .user-chip span {
+    display: none;
+  }
+  .app .user-chip .ic {
+    width: 19px;
+    height: 19px;
+  }
+  .app .content {
+    padding: 22px 14px 30px;
+  }
+  .app #view-dashboard > .section-title:first-child {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 22px;
+    font-size: clamp(20px, 6vw, 25px);
+    line-height: 1.22;
+    letter-spacing: -0.7px;
+  }
+  .app #view-dashboard > .section-title:first-child::before {
+    display: inline-flex;
+    margin: 0 7px 7px 0;
+    vertical-align: middle;
+  }
+  .app #view-dashboard > .section-title:first-child::after {
+    display: none;
+  }
+  .app .cards-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 27px;
+  }
+  .app .cards-row > .card:nth-child(3) {
+    grid-column: auto;
+  }
+  .app .card {
+    width: 100%;
+    min-height: 0;
+    padding: 18px;
+    border-radius: 19px;
+  }
+  .app .card-body {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .app .card canvas {
+    flex: 0 1 auto;
+  }
+  .app #view-dashboard .cards-row + .section-title {
+    display: flex;
+    max-width: 100%;
+    font-size: 17px;
+    line-height: 1.35;
+  }
+  .app .lower-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .app .table-card,
+  .app .alerts-card {
+    width: 100%;
+    padding: 14px;
+    border-radius: 17px;
+  }
+  .app .table-header-row {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .app .table-header-row h2 {
+    font-size: 19px;
+    line-height: 1.3;
+  }
+  .app .date-range {
+    align-self: flex-start;
+    max-width: 100%;
+  }
+  .app .relatorio-filtro {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 6px;
+  }
+  .app .relatorio-filtro input {
+    width: 100%;
+    min-width: 0;
+  }
+  .app .relatorio-filtro .btn-primary {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+  .app .placeholder-view {
+    min-height: 300px;
+    padding: 34px 18px;
+    border-radius: 19px;
+  }
+  .app .placeholder-view h2 {
+    max-width: 100%;
+    font-size: 19px;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+  .app .placeholder-view p {
+    max-width: 100%;
+    font-size: 12.5px;
+  }
+  .app .settings-card {
+    width: 100%;
+    padding: 17px;
+  }
+  .app .settings-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .app .settings-row-text {
+    flex: 1 1 calc(100% - 66px);
+  }
+  .app .theme-switch {
+    margin-left: auto;
+  }
+  .app .modal-overlay {
+    padding: 12px;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+  .app .modal {
+    max-height: calc(100vh - 24px);
+    overflow-y: auto;
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+  .app .modal-actions {
+    gap: 8px;
+  }
+  .app .modal-actions button {
+    flex: 1 1 120px;
+  }
+}
+@media (max-width: 420px) {
+  .app .topbar {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .app .top-icons {
+    margin-left: auto;
+  }
+  .app .icon-btn {
+    width: 31px;
+    height: 31px;
+  }
+  .app .user-chip {
+    width: 33px;
+    height: 33px;
+    min-height: 33px;
+  }
+  .app .burger {
+    width: 33px;
+    height: 33px;
+  }
+  .app .content {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+  .app .card {
+    padding: 16px;
+  }
+  .app .card-body {
+    gap: 10px;
+  }
+  .app .card-body .stat-line {
+    font-size: 10px;
+  }
+  .app .relatorio-filtro {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .app .relatorio-filtro .action-icon {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .app .relatorio-filtro .btn-primary {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+  }
+  .app .relatorio-filtro input {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  .app .placeholder-view {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+@media (max-width: 340px) {
+  .app .top-icons .icon-btn:nth-child(1),
+  .app .top-icons .icon-btn:nth-child(2) {
+    display: none;
+  }
+  .app .topbar {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+  .app .content {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+  .app .card-body {
+    flex-direction: column;
+  }
+  .app .card-body canvas {
+    width: min(140px, 100%);
+    height: auto;
+  }
+}
+.app .email-assignment-row {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  min-width: 0;
+}
+.app .email-assignment-row input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.app .btn-email-corporativo {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 0 12px;
+  font-size: 11px;
+}
+.app #usuarioCargo {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--input-bg);
+  color: var(--text-dark);
+  font: inherit;
+}
+.app #usuarioCargo:focus {
+  outline: none;
+  border-color: var(--purple-light);
+  box-shadow: 0 0 0 3px rgba(122, 77, 255, 0.14);
+}
+.app .form-hint {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 10px;
+  line-height: 1.4;
+}
+@media (max-width: 420px) {
+  .app .email-assignment-row {
+    flex-wrap: wrap;
+  }
+  .app .email-assignment-row input {
+    flex-basis: 100%;
+  }
+  .app .btn-email-corporativo {
+    min-height: 36px;
+    width: 100%;
+  }
+}
+.app #view-config .settings-card-sound {
+  margin-top: 14px;
+}
+.app #view-config .settings-card-sound + .settings-card-sound {
+  margin-top: 10px;
+}
